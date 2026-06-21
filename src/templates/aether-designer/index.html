@@ -1,0 +1,431 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{personal.fullName}} | Portfolio Console</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Outfit:wght@200;300;400;500;600;700&amp;family=Share+Tech+Mono&amp;family=Playfair+Display:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-type="Designer">
+
+  <!-- Dynamic Theme Backgrounds -->
+  <div class="theme-background-viewport">
+    <!-- 1. Developer Grid Background -->
+    
+    <!-- 2. Designer Minimal Background -->
+    <div class="bg-layer design-only designer-space-bg">
+      <div class="designer-mesh-glow"></div>
+    </div>
+    <!-- 3. Freelancer Startup Background -->
+    
+    <!-- 4. Student Academic Background -->
+    
+    <!-- 5. Business Executive Background -->
+    
+  </div>
+
+  <!-- Boot Loader (Developer Category Only) -->
+  
+
+  <!-- ==========================================
+       NAVIGATION LAYER
+       ========================================== -->
+
+  <!-- A. Developer Floating Bottom Navigation Deck -->
+  
+
+  <!-- B. Designer Sleek Top Navigation Bar -->
+  <header class="designer-nav-bar design-only-flex">
+    <div class="nav-brand-designer">{{personal.fullName}}</div>
+    <nav class="nav-links-designer">
+      <a href="#hero" class="designer-nav-item active">Core</a>
+      <a href="#biography" class="designer-nav-item">Bio</a>
+      <a href="#skills-matrix" class="designer-nav-item">Focus</a>
+      <a href="#timeline-flow" class="designer-nav-item">Chronology</a>
+      <a href="#project-pods" class="designer-nav-item">Gallery</a>
+      <a href="#secure-terminal" class="designer-nav-item">Contact</a>
+    </nav>
+  </header>
+
+  <!-- C. Freelancer Floating Capsule Header -->
+  
+
+  <!-- D. Student Classic Top Header -->
+  
+
+  <!-- E. Business Corporate Header -->
+  
+
+
+  <!-- ==========================================
+       VIEWPORT MAIN BODY
+       ========================================== -->
+  <main class="hud-main-viewport">
+
+    <!-- ==========================================
+         1. HERO VIEWPORT SECTIONS
+         ========================================== -->
+
+    <!-- A. Developer Hero (Radar Scanner) -->
+    
+
+    <!-- B. Designer Hero (Offset Typography) -->
+    <section class="hud-viewport-section design-only hero-designer-section">
+      <div class="designer-hero-layout">
+        <div class="designer-hero-info">
+          <span class="designer-tagline">CURATING PREMIUM INTERACTION DESIGNS</span>
+          <h1 class="designer-title-h1">{{personal.fullName}}</h1>
+          <h2 class="designer-subtitle-h2">{{personal.title}}</h2>
+          <p class="designer-intro-paragraph">{{personal.bio}}</p>
+          <div class="designer-hero-actions">
+            <a href="#project-pods" class="designer-btn-dark">View Gallery</a>
+            <a href="#secure-terminal" class="designer-btn-light">Get In Touch</a>
+          </div>
+        </div>
+        <div class="designer-hero-frame">
+          <div class="designer-photo-offset"></div>
+          <div class="designer-photo-container">
+            <img src="{{personal.profileImage}}" alt="{{personal.fullName}}" class="designer-img" onerror="this.src='https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&amp;w=400&amp;auto=format&amp;fit=crop';">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- C. Freelancer Hero (Conversion Focus) -->
+    
+
+    <!-- D. Student Hero (Friendly Welcome) -->
+    
+
+    <!-- E. Business Hero (Executive Profile) -->
+    
+
+
+    <!-- ==========================================
+         2. BIOGRAPHY / DIAGNOSTICS SECTIONS
+         ========================================== -->
+    <section id="biography" class="hud-viewport-section">
+      <!-- Section Headers -->
+      
+      <div class="hud-section-header design-only">
+        <div class="header-line"></div>
+        <h2 class="hud-section-title">Biography</h2>
+        <span class="hud-sub-label">DESIGN_PARADIGM_SUMMARY</span>
+      </div>
+      
+      
+      
+
+      <!-- Categories Specific Biography Layouts -->
+      <div class="biography-theme-router">
+        
+        <!-- A. Developer Diagnostics Layout -->
+        
+
+        <!-- B. Designer Minimalist Bio (No Code Metrics, Elegant Typography) -->
+        <div class="design-only designer-bio-block">
+          <div class="designer-bio-split-grid">
+            <div class="designer-bio-left">
+              <h3 class="designer-bio-header">Creative Philosophy</h3>
+              <p class="designer-philosophy-quote">"Design is not just what it looks like and feels like. Design is how it works."</p>
+              <p class="designer-bio-desc-text">{{personal.bio}}</p>
+            </div>
+            <div class="designer-bio-right">
+              <h3 class="designer-bio-header">Coordinates</h3>
+              <div class="designer-coords-list">
+                <div class="designer-coord-row"><span class="coord-lbl">Origin:</span><span class="coord-val">{{personal.location}}</span></div>
+                <div class="designer-coord-row"><span class="coord-lbl">Channel:</span><span class="coord-val">{{personal.email}}</span></div>
+                <div class="designer-coord-row"><span class="coord-lbl">Contact:</span><span class="coord-val">{{personal.phone}}</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- C. Freelancer Service Cards Layout -->
+        
+
+        <!-- D. Student Academic Background Card -->
+        
+
+        <!-- E. Business Executive Panel -->
+        
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         3. SKILLS MATRIX SECTIONS
+         ========================================== -->
+    <section id="skills-matrix" class="hud-viewport-section">
+      <!-- Section Headers -->
+      
+      <div class="hud-section-header design-only"><div class="header-line"></div><h2 class="hud-section-title">Focus &amp; Disciplines</h2><span class="hud-sub-label">CREATIVE_TOOLSET</span></div>
+      
+      
+      
+
+      <!-- Skills Theme Router (Class controls style layout dynamically) -->
+      <div class="skills-array-wrapper">
+        
+        <!-- A. Developer Wire Chips -->
+        
+
+        <!-- B. Designer Elegant Tags -->
+        <div class="design-only designer-skills-layout">
+          <div class="designer-skills-tags-container">
+            {{#skills}}
+            <span class="designer-elegant-tag">// {{this}}</span>
+            {{/skills}}
+          </div>
+        </div>
+
+        <!-- C. Freelancer Service Tiers Grid -->
+        
+
+        <!-- D. Student Academic Badges (Support IT check in script) -->
+        
+
+        <!-- E. Business Corporate Capabilities -->
+        
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         4. CHRONO TIMELINE SECTIONS
+         ========================================== -->
+    <section id="timeline-flow" class="hud-viewport-section">
+      <!-- Section Headers -->
+      
+      <div class="hud-section-header design-only"><div class="header-line"></div><h2 class="hud-section-title">Chronology</h2><span class="hud-sub-label">CREATIVE_EXP_HISTORY</span></div>
+      
+      
+      
+
+      <!-- Categories Timelines Router -->
+      <div class="timeline-double-grid">
+        
+        <!-- A. Developer Timelines (Server Racks) -->
+        
+
+        <!-- B. Designer Timeline (Thin Elegant Line) -->
+        <div class="design-only design-timeline-layout">
+          <div class="designer-timeline-main-line"></div>
+          <div class="designer-timeline-grid">
+            <!-- Experience Loops -->
+            <div class="designer-time-col">
+              <h4>Creative Works</h4>
+              <div class="designer-nodes-list" id="experience-designer-list">
+                {{#experience}}
+                <div class="designer-timeline-node">
+                  <div class="node-bullet"></div>
+                  <span class="node-year">// {{startDate}} - {{endDate}}</span>
+                  <h5>{{position}}</h5>
+                  <span class="node-location">{{company}}</span>
+                  <p>{{description}}</p>
+                </div>
+                {{/experience}}
+              </div>
+            </div>
+            <!-- Education Loops -->
+            <div class="designer-time-col">
+              <h4>Academic Studies</h4>
+              <div class="designer-nodes-list" id="education-designer-list">
+                {{#education}}
+                <div class="designer-timeline-node">
+                  <div class="node-bullet"></div>
+                  <span class="node-year">// {{year}}</span>
+                  <h5>{{degree}}</h5>
+                  <span class="node-location">{{institution}}</span>
+                  <p>{{description}}</p>
+                </div>
+                {{/education}}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- C. Freelancer Timeline (Contracts and Milestones) -->
+        
+
+        <!-- D. Student Timeline (Academic History First) -->
+        
+
+        <!-- E. Business Timeline (Executive Leadership) -->
+        
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         5. PROJECT VIEWPORTS SECTIONS
+         ========================================== -->
+    <section id="project-pods" class="hud-viewport-section">
+      <!-- Section Headers -->
+      
+      <div class="hud-section-header design-only"><div class="header-line"></div><h2 class="hud-section-title">Visual Gallery</h2><span class="hud-sub-label">CREATIVE_CASE_STUDIES</span></div>
+      
+      
+      
+
+      <!-- Categories Projects Grid Router -->
+      <div class="projects-theme-router">
+        
+        <!-- A. Developer Isometric Pods -->
+        
+
+        <!-- B. Designer Masonry Visual Gallery -->
+        <div class="design-only designer-projects-gallery">
+          <div class="designer-gallery-grid">
+            {{#projects}}
+            <div class="designer-gallery-item">
+              <div class="designer-gallery-img-wrapper">
+                <img src="{{image}}" alt="{{name}}" class="designer-gallery-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&amp;w=400&amp;auto=format&amp;fit=crop';">
+                <div class="designer-gallery-overlay">
+                  <div class="designer-overlay-content">
+                    <span class="designer-gallery-tags" data-technologies="{{technologies}}"></span>
+                    <h4 class="designer-gallery-title">{{name}}</h4>
+                    <p class="designer-gallery-desc">{{description}}</p>
+                    <div class="designer-gallery-links">
+                      <a href="{{liveDemo}}" target="_blank" class="designer-gallery-link">Explore Case <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {{/projects}}
+          </div>
+        </div>
+
+        <!-- C. Freelancer Commercial Portfolio Deck -->
+        
+
+        <!-- E. Business Corporate Case Studies -->
+        
+
+        <!-- D. Student Academic Projects -->
+        
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         6. CERTIFICATES SECTIONS
+         ========================================== -->
+    <section id="credentials" class="hud-viewport-section">
+      <!-- Section Headers -->
+      
+      <div class="hud-section-header design-only"><div class="header-line"></div><h2 class="hud-section-title">Certifications</h2><span class="hud-sub-label">VERIFIED_CREDENTIALS</span></div>
+      
+      
+
+      <!-- Categories Certificates Grid Router -->
+      <div class="credentials-theme-router">
+        
+        <!-- A. Developer Cyber Nodes -->
+        
+
+        <!-- B. Designer Minimal List -->
+        <div class="design-only designer-credentials-layout">
+          <div class="designer-credentials-list" id="credentials-designer-list">
+            {{#certificates}}
+            <div class="designer-cred-row">
+              <div class="designer-cred-info">
+                <h5>{{name}}</h5>
+                <span>{{organization}} • {{date}}</span>
+              </div>
+              <a href="{{verificationLink}}" target="_blank" class="designer-cred-link">Verify <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+            {{/certificates}}
+          </div>
+        </div>
+
+        <!-- D. Student Academic List -->
+        
+
+        <!-- E. Business Corporate Credentials -->
+        
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         7. SECURE SIGNAL TRANSMISSION (CONTACT)
+         ========================================== -->
+    <section id="secure-terminal" class="hud-viewport-section">
+      <!-- Section Headers -->
+      
+      <div class="hud-section-header design-only"><div class="header-line"></div><h2 class="hud-section-title">Inquiry Terminal</h2><span class="hud-sub-label">ESTABLISH_CORRESPONDENCE</span></div>
+      
+      
+      
+
+      <!-- Category Specific Contact Forms -->
+      <div class="contact-forms-theme-router">
+        
+        <!-- A. Developer CLI Terminal Signal form -->
+        
+
+        <!-- B. Designer Underline Form -->
+        <div class="design-only designer-contact-layout">
+          <div class="designer-contact-split">
+            <div class="designer-contact-info">
+              <h3>Let's create something together.</h3>
+              <p>Feel free to reach out for collaborations, project inquiries, or just to say hello.</p>
+              <div class="designer-mail-link">
+                <span class="small-lbl">Drop a line:</span>
+                <a href="mailto:{{personal.email}}">{{personal.email}}</a>
+              </div>
+            </div>
+            <div class="designer-contact-form-wrapper">
+              <form class="designer-underline-form" onsubmit="event.preventDefault(); alert('Message transmitted successfully.'); this.reset();">
+                <div class="designer-form-group">
+                  <input type="text" class="designer-input" placeholder="Your Name" required="">
+                </div>
+                <div class="designer-form-group">
+                  <input type="email" class="designer-input" placeholder="Your Email" required="">
+                </div>
+                <div class="designer-form-group">
+                  <textarea class="designer-input designer-textarea" placeholder="Project Description" required=""></textarea>
+                </div>
+                <button type="submit" class="designer-submit-btn">Send Message</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- C. Freelancer Capsule Inquiry Form + Static Pricing Tables -->
+        
+
+        <!-- D. Student Inquiry Card -->
+        
+
+        <!-- E. Business Request Proposal Form -->
+        
+
+      </div>
+    </section>
+
+    <!-- FOOTER / CONTEXT SIGN OFF -->
+    <footer class="hud-viewport-footer">
+      <div class="footer-hud-lines"></div>
+      <div class="footer-flex-container">
+        <div class="footer-brand">// {{personal.fullName}} // PORTFOLIO PORTAL SYSTEM</div>
+        <div class="footer-copyright">
+          © <span id="hud-current-year">2026</span> ALL DATA CLASSIFIED.
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Custom Logic Script -->
+  <script src="script.js"></script>
+
+
+</body></html>

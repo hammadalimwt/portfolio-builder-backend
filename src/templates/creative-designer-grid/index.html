@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{personal.fullName}} | Creative Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="bg-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+  </div>
+  <div class="site-wrapper">
+    <header class="navbar">
+      <div class="logo">/{{personal.fullName}}</div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <nav id="navMenu">
+        <a href="#work">Work</a>
+        <a href="mailto:{{personal.email}}" class="contact-link">Let's Talk</a>
+      </nav>
+    </header>
+
+    <section class="section intro">
+      <div class="intro-grid">
+        <div class="intro-text">
+          <div class="tag">Creative Explorer</div>
+          <h1 class="serif-title">{{personal.bio}}</h1>
+        </div>
+        <div class="intro-image-card">
+          <div class="intro-image">
+            <img src="{{personal.profileImage}}" alt="{{personal.fullName}}" onerror="this.parentNode.style.display='none';">
+          </div>
+        </div>
+      </div>
+      <div class="meta">
+        <span>📍 Currently in {{personal.location}}</span>
+        <span>🔗 Connect: <a href="{{socialLinks.instagram}}" target="_blank">Instagram</a> / <a href="{{socialLinks.linkedin}}" target="_blank">LinkedIn</a></span>
+      </div>
+    </section>
+
+    <section id="work" class="section work-section">
+      <div class="grid-headline">Selected Work</div>
+      <div class="works-grid">
+        {{#projects}}
+        <div class="work-item">
+          <div class="work-img-wrapper">
+            <img src="{{image}}" alt="{{name}}" onerror="this.src='https://images.unsplash.com/photo-1541462608141-2ff586cc14f2?q=80&w=400&auto=format&fit=crop';">
+          </div>
+          <div class="work-info">
+            <h3>{{name}}</h3>
+            <span>{{technologies}}</span>
+            <p>{{description}}</p>
+          </div>
+        </div>
+        {{/projects}}
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; {{personal.fullName}} | Powered by Portfolio Builder</p>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

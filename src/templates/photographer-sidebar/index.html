@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{personal.fullName}} | Photographer Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="magazine-layout">
+    <!-- Left Navigation Sidebar -->
+    <header class="side-navigation">
+      <div class="branding">
+        <h1 class="logo-text">{{personal.fullName}}</h1>
+        <p class="role">{{personal.title}}</p>
+      </div>
+      <nav class="side-nav">
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="sidebar-footer">
+        <p>📍 {{personal.location}}</p>
+        <p class="social-tags">
+          <a href="{{socialLinks.instagram}}" target="_blank">Instagram</a>
+        </p>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <section id="gallery" class="section-photo">
+        <div class="photo-grid">
+          {{#projects}}
+          <div class="photo-item">
+            <div class="photo-wrapper">
+              <img src="{{image}}" alt="{{name}}" onerror="this.src='https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=600&auto=format&fit=crop';">
+              <div class="photo-info-overlay">
+                <h3>{{name}}</h3>
+                <p>{{description}}</p>
+              </div>
+            </div>
+          </div>
+          {{/projects}}
+        </div>
+      </section>
+
+      <section id="about" class="section block-about">
+        <h2 class="cinzel-header">Behind The Lens</h2>
+        <p class="large-about-text">{{personal.bio}}</p>
+      </section>
+
+      <section id="contact" class="section block-contact">
+        <h2 class="cinzel-header">Booking inquiries</h2>
+        <p>Currently available for commissions, editorial work, and visual collaborations globally.</p>
+        <div class="contact-box">
+          <a href="mailto:{{personal.email}}" class="photo-btn">Email: {{personal.email}}</a>
+        </div>
+      </section>
+
+      <footer>
+        <p>&copy; {{personal.fullName}} | Powered by Portfolio Builder</p>
+      </footer>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

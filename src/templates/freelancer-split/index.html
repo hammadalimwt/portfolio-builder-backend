@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{personal.fullName}} | Freelancer Resume</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="freelancer-wrapper">
+    <!-- Left Column: Sticky Profile -->
+    <div class="profile-sidebar">
+      <div class="avatar-box">
+        <img src="{{personal.profileImage}}" alt="{{personal.fullName}}" onerror="this.parentNode.style.display='none';">
+      </div>
+      <div class="profile-info">
+        <h1>{{personal.fullName}}</h1>
+        <p class="badge-role">{{personal.title}}</p>
+        <p class="sidebar-bio">{{personal.bio}}</p>
+        <div class="meta-row">
+          <span>📍 {{personal.location}}</span>
+          <span>📞 {{personal.phone}}</span>
+          <span>✉️ {{personal.email}}</span>
+        </div>
+        <div class="sidebar-socials">
+          <a href="{{socialLinks.linkedin}}" target="_blank">LinkedIn</a>
+          <a href="{{socialLinks.instagram}}" target="_blank">Instagram</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: Scrollable Content -->
+    <main class="content-scroll">
+      <section id="services" class="section">
+        <h2>Services I Offer</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <span class="service-icon">⚡</span>
+            <h3>Custom Execution</h3>
+            <p>Bespoke consulting and strategic execution tailored for your project scope.</p>
+          </div>
+          <div class="service-card">
+            <span class="service-icon">🌐</span>
+            <h3>Responsive Deployments</h3>
+            <p>End-to-end full-stack architectures built for high performance and visual excellence.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section">
+        <h2>Case Studies & Projects</h2>
+        <div class="projects-vertical">
+          {{#projects}}
+          <div class="project-card">
+            <div class="proj-img">
+              <img src="{{image}}" alt="{{name}}" onerror="this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=400&auto=format&fit=crop';">
+            </div>
+            <div class="proj-body">
+              <h3>{{name}}</h3>
+              <span class="proj-tag">{{technologies}}</span>
+              <p>{{description}}</p>
+              <div class="proj-links">
+                {{#liveDemo}}
+                <a href="{{liveDemo}}" target="_blank" class="proj-btn">View Case Study &rarr;</a>
+                {{/liveDemo}}
+              </div>
+            </div>
+          </div>
+          {{/projects}}
+        </div>
+      </section>
+
+      <section id="skills" class="section">
+        <h2>Core Skillset</h2>
+        <div class="skills-cloud">
+          {{#skills}}
+          <span class="cloud-tag">{{this}}</span>
+          {{/skills}}
+        </div>
+      </section>
+
+      <footer>
+        <p>&copy; {{personal.fullName}} | Powered by Portfolio Builder</p>
+      </footer>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

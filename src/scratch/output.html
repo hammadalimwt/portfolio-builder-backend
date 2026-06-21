@@ -1,0 +1,4632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jane Doe | Portfolio Console</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@200;300;400;500;600;700&family=Share+Tech+Mono&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Custom Stylesheet -->
+  <style>
+/* ==========================================================================
+   AETHER TECH PREMIUM — CATEGORY-AWARE DYNAMIC THEME SYSTEM CSS
+   ========================================================================== */
+
+/* --- Document resets --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  position: relative;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   GLOBAL CATEGORY ELEMENT VISIBILITY ROUTER
+   ========================================================================== */
+/* Hide all themed nodes by default */
+.dev-only, .dev-only-flex, .dev-only-grid,
+.design-only, .design-only-flex, .design-only-grid,
+.freelance-only, .freelance-only-flex, .freelance-only-grid,
+.student-only, .student-only-flex, .student-only-grid,
+.business-only, .business-only-flex, .business-only-grid {
+  display: none !important;
+}
+
+/* Category-specific activations */
+body[data-type="Developer"] .dev-only { display: block !important; }
+body[data-type="Developer"] .dev-only-flex { display: flex !important; }
+body[data-type="Developer"] .dev-only-grid { display: grid !important; }
+
+body[data-type="Designer"] .design-only { display: block !important; }
+body[data-type="Designer"] .design-only-flex { display: flex !important; }
+body[data-type="Designer"] .design-only-grid { display: grid !important; }
+
+body[data-type="Freelancer"] .freelance-only { display: block !important; }
+body[data-type="Freelancer"] .freelance-only-flex { display: flex !important; }
+body[data-type="Freelancer"] .freelance-only-grid { display: grid !important; }
+
+body[data-type="Student"] .student-only { display: block !important; }
+body[data-type="Student"] .student-only-flex { display: flex !important; }
+body[data-type="Student"] .student-only-grid { display: grid !important; }
+
+body[data-type="Business"] .business-only { display: block !important; }
+body[data-type="Business"] .business-only-flex { display: flex !important; }
+body[data-type="Business"] .business-only-grid { display: grid !important; }
+
+
+/* ==========================================================================
+   THEME 1: DEVELOPER CATEGORY STYLING (CYBER HUD THEME)
+   ========================================================================== */
+body[data-type="Developer"] {
+  background-color: #030208;
+  color: #f0f3ff;
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Background grid & glows */
+body[data-type="Developer"] .cyber-space-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -10;
+  overflow: hidden;
+  background-color: #030208;
+}
+
+body[data-type="Developer"] .space-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(0, 242, 254, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 242, 254, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  transform: perspective(500px) rotateX(25deg) translateY(-20px);
+  transform-origin: top center;
+  animation: dev-grid-scroll 24s linear infinite;
+}
+
+body[data-type="Developer"] .scanlines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.12) 50%);
+  background-size: 100% 4px;
+}
+
+body[data-type="Developer"] .cosmic-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.28;
+  pointer-events: none;
+}
+
+body[data-type="Developer"] .glow-cyan {
+  top: 15%;
+  left: 10%;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, #00f2fe 0%, transparent 70%);
+}
+
+body[data-type="Developer"] .glow-indigo {
+  bottom: 20%;
+  right: 15%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #7f00ff 0%, transparent 70%);
+}
+
+@keyframes dev-grid-scroll {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 960px; }
+}
+
+/* Bottom HUD Nav Deck */
+body[data-type="Developer"] .hud-navigation-deck {
+  position: fixed;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+}
+
+body[data-type="Developer"] .deck-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(8, 10, 24, 0.65);
+  border: 1px solid rgba(0, 242, 254, 0.15);
+  padding: 8px 12px;
+  border-radius: 9999px;
+  backdrop-filter: blur(16px);
+}
+
+body[data-type="Developer"] .deck-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: #9aa4cf;
+  text-decoration: none;
+  font-size: 17px;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+body[data-type="Developer"] .deck-item:hover,
+body[data-type="Developer"] .deck-item.active {
+  color: #030208;
+  background-color: #00f2fe;
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
+  transform: translateY(-4px) scale(1.1);
+}
+
+body[data-type="Developer"] .tooltip-text {
+  position: absolute;
+  bottom: 58px;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  background: #0a0b1c;
+  color: #00f2fe;
+  border: 1px solid #00f2fe;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 11px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+body[data-type="Developer"] .deck-item:hover .tooltip-text {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Radar scanner and titles */
+body[data-type="Developer"] .radar-hud-wrapper {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body[data-type="Developer"] .radar-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px dashed rgba(0, 242, 254, 0.2);
+  animation: rotate-radial 25s linear infinite;
+}
+
+body[data-type="Developer"] .outer-ring {
+  width: 100%;
+  height: 100%;
+  border-style: solid;
+  border-color: rgba(0, 242, 254, 0.3) transparent;
+  animation-duration: 40s;
+}
+
+body[data-type="Developer"] .middle-ring {
+  width: 86%;
+  height: 86%;
+  border-style: dotted;
+  border-color: rgba(255, 0, 127, 0.25);
+  animation-direction: reverse;
+  animation-duration: 20s;
+}
+
+body[data-type="Developer"] .inner-ring {
+  width: 72%;
+  height: 72%;
+  border-color: rgba(0, 242, 254, 0.15) transparent;
+}
+
+body[data-type="Developer"] .radar-scanline {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 2px;
+  background: linear-gradient(90deg, #00f2fe, transparent);
+  transform-origin: left center;
+  animation: radar-sweep 5s linear infinite;
+  z-index: 5;
+}
+
+body[data-type="Developer"] .radar-image-container {
+  width: 58%;
+  height: 58%;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #00f2fe;
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.25);
+}
+
+body[data-type="Developer"] .radar-profile-pic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+body[data-type="Developer"] .coordinates-overlay {
+  position: absolute;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 10px;
+  color: #5e668a;
+}
+body[data-type="Developer"] .coord.lat { top: 15px; left: 15px; }
+body[data-type="Developer"] .coord.lng { bottom: 15px; right: 15px; }
+
+@keyframes rotate-radial {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes radar-sweep {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+body[data-type="Developer"] .hud-glitch-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+body[data-type="Developer"] .hud-cyber-subtitle {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 16px;
+  color: #00f2fe;
+}
+
+body[data-type="Developer"] .status-alert-node {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(0, 255, 102, 0.06);
+  border: 1px solid rgba(0, 255, 102, 0.2);
+  padding: 6px 14px;
+  border-radius: 999px;
+  width: fit-content;
+}
+
+body[data-type="Developer"] .alert-pulse-light {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #00ff66;
+  box-shadow: 0 0 10px #00ff66;
+  animation: alert-blink 1.8s infinite alternate;
+}
+
+body[data-type="Developer"] .alert-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 11px;
+  color: #00ff66;
+}
+
+@keyframes alert-blink {
+  0% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+body[data-type="Developer"] .terminal-spec-box {
+  background: rgba(8, 10, 24, 0.45);
+  border: 1px solid rgba(0, 242, 254, 0.08);
+  border-radius: 8px;
+  padding: 16px;
+  font-family: 'Share Tech Mono', monospace;
+  text-align: left;
+}
+
+body[data-type="Developer"] .spec-row {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+  padding-bottom: 6px;
+}
+
+body[data-type="Developer"] .spec-label { color: #5e668a; font-size: 12px; }
+body[data-type="Developer"] .spec-value { font-size: 13px; font-weight: 600; }
+
+body[data-type="Developer"] .hud-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+body[data-type="Developer"] .trigger-primary-glow {
+  background-color: #00f2fe;
+  color: #030208;
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.25);
+}
+
+body[data-type="Developer"] .trigger-secondary-glass {
+  background-color: rgba(255, 255, 255, 0.03);
+  color: #f0f3ff;
+  border: 1px solid rgba(0, 242, 254, 0.15);
+}
+
+/* Glass cards diagnostics */
+body[data-type="Developer"] .hud-glass-card {
+  position: relative;
+  background: rgba(10, 11, 28, 0.55);
+  border: 1px solid rgba(0, 242, 254, 0.15);
+  border-radius: 16px;
+  backdrop-filter: blur(20px);
+  padding: 32px;
+}
+
+body[data-type="Developer"] .card-hud-decal {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #00f2fe;
+}
+body[data-type="Developer"] .card-hud-decal.top-right { top: -1px; right: -1px; border-left: none; border-bottom: none; border-color: #ff007f; }
+body[data-type="Developer"] .card-hud-decal.bottom-left { bottom: -1px; left: -1px; border-right: none; border-top: none; border-color: #ff007f; }
+
+body[data-type="Developer"] .card-hud-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+body[data-type="Developer"] .diag-bar-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 15px;
+}
+
+body[data-type="Developer"] .diag-bar-labels {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 12px;
+}
+
+body[data-type="Developer"] .diag-bar-outer {
+  height: 6px;
+  background-color: #111424;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+body[data-type="Developer"] .diag-bar-inner {
+  height: 100%;
+  border-radius: 999px;
+}
+body[data-type="Developer"] .bar-cyan { background: linear-gradient(90deg, #7f00ff, #00f2fe); }
+body[data-type="Developer"] .bar-indigo { background: linear-gradient(90deg, #7f00ff, #ff007f); }
+body[data-type="Developer"] .bar-pink { background: linear-gradient(90deg, #ff007f, #00f2fe); }
+
+body[data-type="Developer"] .metadata-node-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+body[data-type="Developer"] .meta-node-item {
+  display: flex;
+  gap: 16px;
+}
+
+body[data-type="Developer"] .meta-node-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  color: #00f2fe;
+}
+
+body[data-type="Developer"] .meta-node-content {
+  display: flex;
+  flex-direction: column;
+}
+
+body[data-type="Developer"] .meta-node-title {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 10px;
+  color: #5e668a;
+}
+
+body[data-type="Developer"] .meta-node-desc {
+  font-size: 14px;
+}
+
+/* Core skills array hardware */
+body[data-type="Developer"] .skills-hardware-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 16px;
+}
+
+body[data-type="Developer"] .skill-chip-node {
+  position: relative;
+  background: rgba(13, 16, 38, 0.7);
+  border: 1px solid rgba(0, 242, 254, 0.1);
+  border-radius: 8px;
+  padding: 16px 10px;
+  text-align: center;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
+}
+
+body[data-type="Developer"] .chip-port-light {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #5e668a;
+}
+
+body[data-type="Developer"] .chip-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 13px;
+  color: #9aa4cf;
+  font-weight: 600;
+}
+
+body[data-type="Developer"] .chip-connection-wires {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  display: flex;
+  justify-content: space-around;
+  opacity: 0.4;
+}
+
+body[data-type="Developer"] .wire {
+  width: 2px;
+  height: 100%;
+  background-color: rgba(0, 242, 254, 0.2);
+}
+
+body[data-type="Developer"] .skill-chip-node:hover {
+  transform: translateY(-4px);
+  background: rgba(0, 242, 254, 0.05);
+  border-color: #00f2fe;
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.25);
+}
+
+body[data-type="Developer"] .skill-chip-node:hover .chip-port-light {
+  background-color: #00f2fe;
+  box-shadow: 0 0 8px #00f2fe;
+}
+
+body[data-type="Developer"] .skill-chip-node:hover .chip-label {
+  color: #00f2fe;
+}
+
+/* Timelines Server racks */
+body[data-type="Developer"] .server-racks-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+body[data-type="Developer"] .server-rack-card {
+  background: rgba(9, 10, 26, 0.55);
+  border-left: 3px solid #00f2fe;
+  padding: 20px;
+  border-radius: 0 8px 8px 0;
+  display: flex;
+  gap: 18px;
+}
+
+body[data-type="Developer"] .rack-status-light {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-top: 5px;
+}
+body[data-type="Developer"] .rack-status-light.active {
+  background-color: #00f2fe;
+  box-shadow: 0 0 8px #00f2fe;
+  animation: dev-blink 2s infinite alternate;
+}
+body[data-type="Developer"] .rack-status-light.active-pink {
+  background-color: #ff007f;
+  box-shadow: 0 0 8px #ff007f;
+  animation: dev-blink 2.2s infinite alternate;
+}
+
+@keyframes dev-blink {
+  0% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+body[data-type="Developer"] .rack-title { font-family: 'Space Grotesk', sans-serif; font-size: 16px; }
+body[data-type="Developer"] .rack-tag { font-family: 'Share Tech Mono', monospace; font-size: 11px; padding: 2px 8px; border-radius: 4px; }
+body[data-type="Developer"] .rack-tag.cyan { background-color: rgba(0, 242, 254, 0.08); color: #00f2fe; border: 1px solid rgba(0, 242, 254, 0.2); }
+body[data-type="Developer"] .rack-tag.pink { background-color: rgba(255, 0, 127, 0.08); color: #ff007f; border: 1px solid rgba(255, 0, 127, 0.2); }
+body[data-type="Developer"] .rack-meta { font-family: 'Share Tech Mono', monospace; font-size: 11px; color: #5e668a; margin-bottom: 10px; }
+body[data-type="Developer"] .rack-desc { font-size: 14px; color: #9aa4cf; }
+
+/* Projects Isometric Pods */
+body[data-type="Developer"] .project-pod-card {
+  background: rgba(10, 11, 28, 0.5);
+  border: 1px solid rgba(0, 242, 254, 0.15);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: all 0.3s;
+}
+
+body[data-type="Developer"] .pod-image-wrapper {
+  position: relative;
+  height: 190px;
+  background-color: #0b0c16;
+}
+body[data-type="Developer"] .pod-screenshot { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
+body[data-type="Developer"] .pod-overlay-hologram {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(0deg, rgba(0, 242, 254, 0.2) 0%, transparent 80%);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transition: all 0.3s;
+}
+body[data-type="Developer"] .holo-text {
+  font-family: 'Share Tech Mono', monospace; font-size: 11px; color: #00f2fe;
+  background: rgba(3, 2, 8, 0.8); padding: 6px 14px; border: 1px solid #00f2fe;
+  box-shadow: 0 0 10px rgba(0, 242, 254, 0.25);
+}
+
+body[data-type="Developer"] .project-pod-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0, 242, 254, 0.35);
+  box-shadow: 0 12px 30px rgba(0, 242, 254, 0.08);
+}
+body[data-type="Developer"] .project-pod-card:hover .pod-screenshot { transform: scale(1.08) rotate(1deg); }
+body[data-type="Developer"] .project-pod-card:hover .pod-overlay-hologram { opacity: 1; }
+
+body[data-type="Developer"] .pod-content { padding: 24px; display: flex; flex-direction: column; flex-grow: 1; }
+body[data-type="Developer"] .pod-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+body[data-type="Developer"] .pod-tech-badge { font-family: 'Share Tech Mono', monospace; font-size: 10px; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.08); color: #9aa4cf; padding: 2px 8px; border-radius: 4px; }
+body[data-type="Developer"] .pod-title { font-family: 'Space Grotesk', sans-serif; font-size: 18px; }
+body[data-type="Developer"] .pod-desc { font-size: 14px; color: #9aa4cf; margin-bottom: 24px; flex-grow: 1; }
+body[data-type="Developer"] .pod-actions-dock { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; border-top: 1px dashed rgba(255, 255, 255, 0.08); padding-top: 20px; }
+body[data-type="Developer"] .pod-dock-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 8px 10px; font-family: 'Share Tech Mono', monospace; font-size: 11px; text-decoration: none; border-radius: 6px; }
+body[data-type="Developer"] .source-btn { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(0, 242, 254, 0.15); color: #9aa4cf; }
+body[data-type="Developer"] .demo-btn { background: rgba(0, 242, 254, 0.06); border: 1px solid rgba(0, 242, 254, 0.25); color: #00f2fe; }
+
+/* Certificate Nodes */
+body[data-type="Developer"] .credentials-flow-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: rgba(8, 10, 24, 0.25);
+  padding: 24px;
+  border-radius: 16px;
+}
+body[data-type="Developer"] .credential-hud-node {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: rgba(14, 15, 36, 0.5);
+  border: 1px solid rgba(0, 242, 254, 0.08);
+  border-radius: 8px;
+  padding: 16px 20px;
+}
+body[data-type="Developer"] .credential-node-icon {
+  display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%;
+  background: rgba(0, 242, 254, 0.05); border: 1px solid rgba(0, 242, 254, 0.2); color: #00f2fe;
+}
+body[data-type="Developer"] .credential-name { font-family: 'Space Grotesk', sans-serif; font-size: 15px; }
+body[data-type="Developer"] .credential-issuer { font-family: 'Share Tech Mono', monospace; font-size: 11px; color: #5e668a; }
+body[data-type="Developer"] .cred-verify-trigger { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; font-family: 'Share Tech Mono', monospace; font-size: 11px; text-decoration: none; border: 1px solid rgba(255, 0, 127, 0.3); color: #ff007f; border-radius: 6px; }
+
+/* CLI Contact form */
+body[data-type="Developer"] .secure-transmission-grid { display: grid; grid-template-columns: 1fr; gap: 30px; }
+body[data-type="Developer"] .terminal-instructions-card { background: rgba(9, 10, 26, 0.45); border: 1px solid rgba(255, 255, 255, 0.03); border-radius: 16px; padding: 32px; display: flex; flex-direction: column; gap: 20px; }
+body[data-type="Developer"] .instructions-title { font-family: 'Space Grotesk', sans-serif; font-size: 18px; }
+body[data-type="Developer"] .instructions-para { color: #9aa4cf; font-size: 14px; }
+body[data-type="Developer"] .cyber-security-badge { display: flex; align-items: center; gap: 15px; background: rgba(255, 0, 127, 0.05); border: 1px solid rgba(255, 0, 127, 0.15); padding: 12px 18px; border-radius: 8px; }
+body[data-type="Developer"] .lock-shield { color: #ff007f; font-size: 18px; }
+body[data-type="Developer"] .badge-text { display: flex; flex-direction: column; }
+body[data-type="Developer"] .badge-text strong { font-family: 'Share Tech Mono', monospace; font-size: 12px; color: #ff007f; }
+body[data-type="Developer"] .badge-text span { font-family: 'Share Tech Mono', monospace; font-size: 9px; color: #5e668a; }
+body[data-type="Developer"] .diagnostics-terminal-feed { background: #05060d; border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 8px; font-family: 'Share Tech Mono', monospace; overflow: hidden; }
+body[data-type="Developer"] .feed-header { background: #0d0f1a; padding: 6px 12px; font-size: 10px; color: #5e668a; }
+body[data-type="Developer"] .feed-console { padding: 12px; height: 100px; overflow-y: auto; font-size: 12px; }
+body[data-type="Developer"] .feed-line { margin-bottom: 4px; color: #00ff66; text-shadow: 0 0 4px rgba(0, 255, 102, 0.2); }
+body[data-type="Developer"] .input-hud-group { display: flex; flex-direction: column; gap: 8px; }
+body[data-type="Developer"] .input-hud-label { font-family: 'Share Tech Mono', monospace; font-size: 11px; color: #9aa4cf; }
+body[data-type="Developer"] .input-hud-wrapper { position: relative; width: 100%; }
+body[data-type="Developer"] .input-hud-element { width: 100%; background: rgba(5, 6, 15, 0.7); border: 1px solid rgba(0, 242, 254, 0.15); border-radius: 8px; padding: 12px 16px; color: #f0f3ff; font-family: 'Share Tech Mono', monospace; font-size: 13px; outline: none; }
+body[data-type="Developer"] .input-hud-element.text-area { min-height: 110px; resize: vertical; }
+body[data-type="Developer"] .input-glow-line { position: absolute; bottom: 0; left: 50%; width: 0%; height: 1px; background-color: #00f2fe; box-shadow: 0 0 10px rgba(0, 242, 254, 0.4); transition: 0.4s; }
+body[data-type="Developer"] .input-hud-element:focus { border-color: #00f2fe; }
+body[data-type="Developer"] .input-hud-element:focus + .input-glow-line { width: 100%; left: 0; }
+body[data-type="Developer"] .cyber-submit-trigger { position: relative; width: 100%; padding: 16px 20px; border-radius: 8px; border: none; background: transparent; cursor: pointer; overflow: hidden; }
+body[data-type="Developer"] .btn-background-glow { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, #7f00ff, #ff007f); transition: 0.3s; z-index: 1; }
+body[data-type="Developer"] .cyber-submit-trigger:hover .btn-background-glow { transform: scale(1.05); background: linear-gradient(90deg, #ff007f, #00f2fe); box-shadow: 0 0 25px rgba(255, 0, 127, 0.4); }
+body[data-type="Developer"] .btn-inner-content { position: relative; z-index: 2; display: flex; align-items: center; justify-content: center; gap: 12px; color: white; font-family: 'Share Tech Mono', monospace; font-size: 13px; letter-spacing: 2px; }
+
+
+/* ==========================================================================
+   THEME 2: DESIGNER CATEGORY STYLING (MINIMAL GALLERY THEME)
+   ========================================================================== */
+body[data-type="Designer"] {
+  background-color: #0d0d0f;
+  color: #e5e5eb;
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Custom fonts styling override */
+body[data-type="Designer"] h1,
+body[data-type="Designer"] h2,
+body[data-type="Designer"] h3,
+body[data-type="Designer"] h4,
+body[data-type="Designer"] h5,
+body[data-type="Designer"] .designer-title-h1,
+body[data-type="Designer"] .designer-philosophy-quote {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* Background Mesh Glow */
+body[data-type="Designer"] .designer-space-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -10;
+  background-color: #0d0d0f;
+}
+
+body[data-type="Designer"] .designer-mesh-glow {
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+  filter: blur(80px);
+}
+
+/* Sleek Top Navigation */
+body[data-type="Designer"] .designer-nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba(13, 13, 15, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+body[data-type="Designer"] .nav-brand-designer {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 18px;
+}
+
+body[data-type="Designer"] .nav-links-designer {
+  display: flex;
+  gap: 25px;
+}
+
+body[data-type="Designer"] .designer-nav-item {
+  color: #8a8a93;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+body[data-type="Designer"] .designer-nav-item:hover,
+body[data-type="Designer"] .designer-nav-item.active {
+  color: #d4af37; /* Bronze accent */
+}
+
+body[data-type="Designer"] .designer-nav-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #d4af37;
+  transition: width 0.3s;
+}
+
+body[data-type="Designer"] .designer-nav-item:hover::after,
+body[data-type="Designer"] .designer-nav-item.active::after {
+  width: 100%;
+}
+
+/* Hero elements */
+body[data-type="Designer"] .designer-hero-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 40px;
+  padding-top: 100px;
+}
+
+@media (min-width: 900px) {
+  body[data-type="Designer"] .designer-hero-layout {
+    grid-template-columns: 1.2fr 1fr;
+  }
+}
+
+body[data-type="Designer"] .designer-tagline {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #d4af37;
+  font-weight: 600;
+}
+
+body[data-type="Designer"] .designer-title-h1 {
+  font-size: 48px;
+  line-height: 1.1;
+  margin: 15px 0 8px;
+}
+
+body[data-type="Designer"] .designer-subtitle-h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #a0a0a9;
+  margin-bottom: 24px;
+}
+
+body[data-type="Designer"] .designer-intro-paragraph {
+  font-size: 16px;
+  color: #a0a0a9;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+body[data-type="Designer"] .designer-hero-actions {
+  display: flex;
+  gap: 15px;
+}
+
+body[data-type="Designer"] .designer-btn-dark,
+body[data-type="Designer"] .designer-btn-light {
+  padding: 12px 24px;
+  border-radius: 0; /* Minimal square design */
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+body[data-type="Designer"] .designer-btn-dark {
+  background-color: #ffffff;
+  color: #0d0d0f;
+}
+body[data-type="Designer"] .designer-btn-dark:hover {
+  background-color: #d4af37;
+  color: #ffffff;
+}
+
+body[data-type="Designer"] .designer-btn-light {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+body[data-type="Designer"] .designer-btn-light:hover {
+  border-color: #d4af37;
+  color: #d4af37;
+}
+
+/* Picture offset frame */
+body[data-type="Designer"] .designer-hero-frame {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body[data-type="Designer"] .designer-photo-offset {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 280px;
+  height: 350px;
+  border: 1px solid #d4af37;
+  z-index: 1;
+}
+
+body[data-type="Designer"] .designer-photo-container {
+  width: 280px;
+  height: 350px;
+  background-color: #1a1a1f;
+  z-index: 2;
+  overflow: hidden;
+}
+
+body[data-type="Designer"] .designer-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: filter 0.5s;
+}
+
+body[data-type="Designer"] .designer-hero-frame:hover .designer-img {
+  filter: grayscale(0%);
+}
+
+/* Designer bio */
+body[data-type="Designer"] .designer-bio-split-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+@media (min-width: 900px) {
+  body[data-type="Designer"] .designer-bio-split-grid {
+    grid-template-columns: 1.5fr 1fr;
+  }
+}
+
+body[data-type="Designer"] .designer-bio-header {
+  font-size: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 10px;
+}
+
+body[data-type="Designer"] .designer-philosophy-quote {
+  font-size: 22px;
+  line-height: 1.4;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+body[data-type="Designer"] .designer-bio-desc-text {
+  color: #a0a0a9;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+body[data-type="Designer"] .designer-coords-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+body[data-type="Designer"] .designer-coord-row {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+  padding-bottom: 8px;
+}
+
+body[data-type="Designer"] .designer-coord-row .coord-lbl {
+  color: #8a8a93;
+  font-size: 13px;
+}
+
+/* Designer skills elegant tags */
+body[data-type="Designer"] .designer-skills-tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 30px;
+}
+
+body[data-type="Designer"] .designer-elegant-tag {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 20px;
+  color: #a0a0a9;
+  transition: color 0.3s;
+}
+
+body[data-type="Designer"] .designer-elegant-tag:hover {
+  color: #d4af37;
+}
+
+/* Designer Timeline thin year line */
+body[data-type="Designer"] .designer-timeline-main-line {
+  display: none;
+}
+
+body[data-type="Designer"] .designer-timeline-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+@media (min-width: 900px) {
+  body[data-type="Designer"] .designer-timeline-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+body[data-type="Designer"] .designer-timeline-node {
+  position: relative;
+  padding-left: 20px;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 30px;
+}
+
+body[data-type="Designer"] .node-bullet {
+  position: absolute;
+  top: 6px;
+  left: -4px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #d4af37;
+}
+
+body[data-type="Designer"] .node-year {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  color: #d4af37;
+  display: block;
+  margin-bottom: 5px;
+}
+
+body[data-type="Designer"] .designer-timeline-node h5 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  color: #ffffff;
+}
+
+body[data-type="Designer"] .node-location {
+  font-size: 12px;
+  color: #8a8a93;
+  display: block;
+  margin-bottom: 10px;
+}
+
+body[data-type="Designer"] .designer-timeline-node p {
+  font-size: 13px;
+  color: #a0a0a9;
+}
+
+/* Designer gallery visual masonry */
+body[data-type="Designer"] .designer-gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+@media (min-width: 600px) {
+  body[data-type="Designer"] .designer-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+body[data-type="Designer"] .designer-gallery-item {
+  position: relative;
+  overflow: hidden;
+  background-color: #1a1a1f;
+}
+
+body[data-type="Designer"] .designer-gallery-img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 280px;
+}
+
+body[data-type="Designer"] .designer-gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+body[data-type="Designer"] .designer-gallery-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(13, 13, 15, 0.9);
+  padding: 30px;
+  display: flex;
+  align-items: flex-end;
+  opacity: 0;
+  transition: all 0.4s;
+}
+
+body[data-type="Designer"] .designer-gallery-item:hover .designer-gallery-img {
+  transform: scale(1.05);
+}
+
+body[data-type="Designer"] .designer-gallery-item:hover .designer-gallery-overlay {
+  opacity: 1;
+}
+
+body[data-type="Designer"] .designer-gallery-tags {
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #d4af37;
+  display: block;
+  margin-bottom: 8px;
+}
+
+body[data-type="Designer"] .designer-gallery-title {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+body[data-type="Designer"] .designer-gallery-desc {
+  font-size: 13px;
+  color: #a0a0a9;
+  margin-bottom: 15px;
+}
+
+body[data-type="Designer"] .designer-gallery-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #d4af37;
+  padding-bottom: 2px;
+}
+
+/* Designer minimal certificates */
+body[data-type="Designer"] .designer-credentials-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+body[data-type="Designer"] .designer-cred-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 15px;
+}
+
+body[data-type="Designer"] .designer-cred-info h5 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+body[data-type="Designer"] .designer-cred-info span {
+  font-size: 12px;
+  color: #8a8a93;
+}
+
+body[data-type="Designer"] .designer-cred-link {
+  color: #d4af37;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+/* Designer underline contact form */
+body[data-type="Designer"] .designer-contact-split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+@media (min-width: 900px) {
+  body[data-type="Designer"] .designer-contact-split {
+    grid-template-columns: 1fr 1.3fr;
+  }
+}
+
+body[data-type="Designer"] .designer-contact-info h3 {
+  font-size: 32px;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+body[data-type="Designer"] .designer-contact-info p {
+  color: #a0a0a9;
+  font-size: 15px;
+}
+
+body[data-type="Designer"] .designer-mail-link {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+body[data-type="Designer"] .designer-mail-link .small-lbl {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #8a8a93;
+}
+
+body[data-type="Designer"] .designer-mail-link a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+  border-bottom: 1px solid #d4af37;
+  width: fit-content;
+}
+
+body[data-type="Designer"] .designer-form-group {
+  margin-bottom: 25px;
+}
+
+body[data-type="Designer"] .designer-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 12px 0;
+  color: #ffffff;
+  font-family: inherit;
+  outline: none;
+  transition: all 0.3s;
+}
+
+body[data-type="Designer"] .designer-textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+body[data-type="Designer"] .designer-input:focus {
+  border-bottom-color: #d4af37;
+}
+
+body[data-type="Designer"] .designer-submit-btn {
+  background-color: #ffffff;
+  color: #0d0d0f;
+  border: none;
+  padding: 14px 30px;
+  font-family: inherit;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+body[data-type="Designer"] .designer-submit-btn:hover {
+  background-color: #d4af37;
+  color: #ffffff;
+}
+
+
+/* ==========================================================================
+   THEME 3: FREELANCER CATEGORY STYLING (CONVERSION DECK THEME)
+   ========================================================================== */
+body[data-type="Freelancer"] {
+  background-color: #080916;
+  color: #d0d3e3;
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Background layers */
+body[data-type="Freelancer"] .freelancer-space-bg {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  z-index: -10;
+  background-color: #080916;
+}
+
+body[data-type="Freelancer"] .startup-grid {
+  position: absolute;
+  width: 100%; height: 100%;
+  background-image: 
+    linear-gradient(rgba(127, 0, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(127, 0, 255, 0.02) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+body[data-type="Freelancer"] .startup-glow {
+  position: absolute;
+  top: 20%; left: 50%; transform: translate(-50%, -50%);
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(127, 0, 255, 0.08) 0%, transparent 70%);
+  filter: blur(80px);
+}
+
+/* Floating capsule nav */
+body[data-type="Freelancer"] .freelancer-capsule-nav {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  width: 90%;
+  max-width: 800px;
+}
+
+body[data-type="Freelancer"] .capsule-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: rgba(11, 13, 30, 0.7);
+  border: 1px solid rgba(127, 0, 255, 0.2);
+  border-radius: 999px;
+  padding: 10px 24px;
+  backdrop-filter: blur(12px);
+}
+
+body[data-type="Freelancer"] .capsule-logo {
+  font-weight: 700;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+body[data-type="Freelancer"] .capsule-menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+body[data-type="Freelancer"] .capsule-link {
+  color: #9aa4cf;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+body[data-type="Freelancer"] .capsule-link:hover,
+body[data-type="Freelancer"] .capsule-link.active {
+  color: #a855f7;
+}
+
+body[data-type="Freelancer"] .capsule-link.highlight {
+  background-color: #a855f7;
+  color: #ffffff;
+  padding: 6px 16px;
+  border-radius: 999px;
+}
+
+body[data-type="Freelancer"] .capsule-link.highlight:hover {
+  background-color: #ffffff;
+  color: #080916;
+}
+
+/* Freelancer hero */
+body[data-type="Freelancer"] .hero-freelancer-section {
+  padding-top: 120px;
+}
+
+body[data-type="Freelancer"] .freelancer-hero-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 40px;
+}
+
+@media (min-width: 900px) {
+  body[data-type="Freelancer"] .freelancer-hero-layout {
+    grid-template-columns: 1.2fr 1fr;
+  }
+}
+
+body[data-type="Freelancer"] .availability-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(0, 255, 102, 0.05);
+  border: 1px solid rgba(0, 255, 102, 0.15);
+  padding: 6px 14px;
+  border-radius: 999px;
+  width: fit-content;
+  font-size: 11px;
+  color: #00ff66;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+body[data-type="Freelancer"] .pulse-green-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #00ff66;
+  box-shadow: 0 0 10px #00ff66;
+}
+
+body[data-type="Freelancer"] .freelancer-heading {
+  font-size: 38px;
+  line-height: 1.2;
+  color: #ffffff;
+  margin: 15px 0;
+}
+
+body[data-type="Freelancer"] .freelancer-subheading {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #9aa4cf;
+  margin-bottom: 30px;
+}
+
+body[data-type="Freelancer"] .freelancer-cta-group {
+  display: flex;
+  gap: 15px;
+}
+
+body[data-type="Freelancer"] .freelancer-cta-primary {
+  background-color: #a855f7;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(127, 0, 255, 0.3);
+}
+
+body[data-type="Freelancer"] .freelancer-cta-secondary {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+body[data-type="Freelancer"] .freelancer-avatar-wrapper {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  margin: 0 auto;
+}
+
+body[data-type="Freelancer"] .freelancer-avatar-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 24px;
+  border: 2px solid rgba(127, 0, 255, 0.2);
+}
+
+body[data-type="Freelancer"] .stats-badge-floater {
+  position: absolute;
+  bottom: -15px;
+  right: -15px;
+  background: #11132a;
+  border: 1px solid rgba(127, 0, 255, 0.3);
+  padding: 10px 16px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+body[data-type="Freelancer"] .stats-badge-floater strong {
+  font-size: 18px;
+  color: #ffffff;
+}
+body[data-type="Freelancer"] .stats-badge-floater span {
+  font-size: 10px;
+  color: #9aa4cf;
+}
+
+/* Freelancer services cards */
+body[data-type="Freelancer"] .services-headline {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+body[data-type="Freelancer"] .services-headline h3 {
+  font-size: 24px;
+  color: #ffffff;
+}
+
+body[data-type="Freelancer"] .services-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+}
+
+@media (min-width: 768px) {
+  body[data-type="Freelancer"] .services-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+body[data-type="Freelancer"] .service-card-item {
+  background: #0f1124;
+  border: 1px solid rgba(127, 0, 255, 0.1);
+  padding: 24px;
+  border-radius: 16px;
+  transition: all 0.3s;
+}
+
+body[data-type="Freelancer"] .service-card-item:hover {
+  border-color: rgba(127, 0, 255, 0.4);
+  transform: translateY(-4px);
+}
+
+body[data-type="Freelancer"] .service-card-icon {
+  font-size: 24px;
+  color: #a855f7;
+  margin-bottom: 15px;
+}
+
+body[data-type="Freelancer"] .service-card-item h4 {
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+body[data-type="Freelancer"] .service-card-item p {
+  font-size: 14px;
+  color: #9aa4cf;
+}
+
+/* Freelancer skills service tiers */
+body[data-type="Freelancer"] .freelancer-services-tiers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+body[data-type="Freelancer"] .freelancer-tier-card {
+  background: rgba(15, 17, 36, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 20px;
+  border-radius: 12px;
+  position: relative;
+}
+
+body[data-type="Freelancer"] .tier-indicator-dot {
+  position: absolute;
+  top: 20px; right: 20px;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background-color: #a855f7;
+}
+
+body[data-type="Freelancer"] .freelancer-tier-card h5 {
+  font-size: 15px;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+body[data-type="Freelancer"] .freelancer-tier-card p {
+  font-size: 13px;
+  color: #9aa4cf;
+}
+
+/* Freelancer work logs */
+body[data-type="Freelancer"] .freelancer-rack-card {
+  background: #0f1124;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+body[data-type="Freelancer"] .rack-header-fl {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+body[data-type="Freelancer"] .rack-header-fl h5 {
+  font-size: 15px;
+  color: #ffffff;
+}
+
+body[data-type="Freelancer"] .fl-tag,
+body[data-type="Freelancer"] .fl-tag-pink {
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+body[data-type="Freelancer"] .fl-tag { background: rgba(127, 0, 255, 0.1); color: #a855f7; }
+body[data-type="Freelancer"] .fl-tag-pink { background: rgba(255, 0, 127, 0.1); color: #ff007f; }
+
+body[data-type="Freelancer"] .fl-meta {
+  font-size: 11px;
+  color: #5e668a;
+  display: block;
+  margin-bottom: 10px;
+}
+
+body[data-type="Freelancer"] .freelancer-rack-card p {
+  font-size: 13px;
+  color: #9aa4cf;
+}
+
+/* Freelancer portfolio project card */
+body[data-type="Freelancer"] .freelancer-project-card {
+  background: #0f1124;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+body[data-type="Freelancer"] .freelancer-project-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(127, 0, 255, 0.2);
+}
+
+body[data-type="Freelancer"] .fl-project-img {
+  height: 200px;
+  overflow: hidden;
+}
+
+body[data-type="Freelancer"] .fl-project-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+body[data-type="Freelancer"] .fl-project-body {
+  padding: 24px;
+}
+
+body[data-type="Freelancer"] .fl-project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+body[data-type="Freelancer"] .fl-project-body h4 {
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+body[data-type="Freelancer"] .fl-project-body p {
+  font-size: 14px;
+  color: #9aa4cf;
+  margin-bottom: 20px;
+}
+
+body[data-type="Freelancer"] .fl-project-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+body[data-type="Freelancer"] .fl-demo-trigger {
+  background: #a855f7;
+  color: white;
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+body[data-type="Freelancer"] .fl-code-link {
+  color: #9aa4cf;
+  text-align: center;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+/* Pricing cards */
+body[data-type="Freelancer"] .pricing-headline {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+body[data-type="Freelancer"] .pricing-headline h3 {
+  font-size: 20px;
+  color: #ffffff;
+}
+
+body[data-type="Freelancer"] .pricing-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+@media (min-width: 600px) {
+  body[data-type="Freelancer"] .pricing-cards-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+body[data-type="Freelancer"] .pricing-card {
+  background: #0f1124;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 30px;
+  border-radius: 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+body[data-type="Freelancer"] .pricing-card.active {
+  border-color: #a855f7;
+  box-shadow: 0 4px 20px rgba(127, 0, 255, 0.15);
+}
+
+body[data-type="Freelancer"] .plan-name {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #9aa4cf;
+  margin-bottom: 10px;
+}
+
+body[data-type="Freelancer"] .plan-price {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+body[data-type="Freelancer"] .plan-desc {
+  font-size: 13px;
+  color: #9aa4cf;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+body[data-type="Freelancer"] .plan-cta-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  width: 100%;
+}
+
+body[data-type="Freelancer"] .pricing-card.active .plan-cta-btn {
+  background: #a855f7;
+  border-color: #a855f7;
+}
+
+/* Freelancer contact card form */
+body[data-type="Freelancer"] .freelance-contact-card {
+  background: #0f1124;
+  border: 1px solid rgba(127, 0, 255, 0.1);
+  padding: 32px;
+  border-radius: 16px;
+}
+
+body[data-type="Freelancer"] .freelance-contact-card h4 {
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+body[data-type="Freelancer"] .fl-form-row {
+  margin-bottom: 20px;
+}
+
+body[data-type="Freelancer"] .fl-capsule-input {
+  width: 100%;
+  background: rgba(8, 9, 22, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: #ffffff;
+  font-family: inherit;
+  outline: none;
+}
+
+body[data-type="Freelancer"] .fl-capsule-input.fl-textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+body[data-type="Freelancer"] .fl-capsule-input:focus {
+  border-color: #a855f7;
+}
+
+body[data-type="Freelancer"] .fl-submit-btn {
+  background-color: #a855f7;
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+body[data-type="Freelancer"] .fl-submit-btn:hover {
+  background-color: #ffffff;
+  color: #080916;
+}
+
+
+/* ==========================================================================
+   THEME 4: STUDENT CATEGORY STYLING (ACADEMIC CARDS THEME)
+   ========================================================================== */
+body[data-type="Student"] {
+  background-color: #0f172a;
+  color: #cbd5e1;
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Background layers */
+body[data-type="Student"] .student-space-bg {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  z-index: -10;
+  background-color: #0f172a;
+}
+
+body[data-type="Student"] .academic-dots {
+  position: absolute;
+  width: 100%; height: 100%;
+  background-image: radial-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Classic navigation header */
+body[data-type="Student"] .student-classic-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+body[data-type="Student"] .student-logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+body[data-type="Student"] .student-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+body[data-type="Student"] .student-link {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+body[data-type="Student"] .student-link-btn {
+  background-color: #6366f1;
+  color: #ffffff;
+  padding: 8px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Student hero card */
+body[data-type="Student"] .hero-student-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body[data-type="Student"] .student-hero-card {
+  width: 100%;
+  max-width: 800px;
+  background: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+body[data-type="Student"] .student-avatar-frame {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 20px;
+  border: 3px solid #6366f1;
+}
+
+body[data-type="Student"] .student-profile-pic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+body[data-type="Student"] .student-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 32px;
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+body[data-type="Student"] .student-degree-status {
+  font-size: 16px;
+  color: #818cf8;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+body[data-type="Student"] .student-bio-text {
+  font-size: 15px;
+  color: #94a3b8;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+body[data-type="Student"] .student-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+body[data-type="Student"] .student-btn {
+  padding: 10px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+body[data-type="Student"] .student-btn-fill { background: #6366f1; color: white; }
+body[data-type="Student"] .student-btn-outline { border: 1px solid rgba(255, 255, 255, 0.1); color: white; }
+
+/* Student diagnostics academics */
+body[data-type="Student"] .student-summary-card {
+  background: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 30px;
+  border-radius: 16px;
+}
+
+body[data-type="Student"] .student-summary-bio {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #cbd5e1;
+  margin-bottom: 25px;
+}
+
+body[data-type="Student"] .academic-quick-stats {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+body[data-type="Student"] .academic-stat {
+  font-size: 13px;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+body[data-type="Student"] .academic-stat i {
+  color: #6366f1;
+}
+
+/* Student academic skills badges */
+body[data-type="Student"] .student-skills-badges-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+body[data-type="Student"] .student-it-metrics-block {
+  background: rgba(99, 102, 241, 0.05);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  padding: 16px 20px;
+  border-radius: 12px;
+}
+
+body[data-type="Student"] .student-it-header {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+body[data-type="Student"] .student-it-metrics-row {
+  display: flex;
+  gap: 30px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 13px;
+  color: #818cf8;
+}
+
+body[data-type="Student"] .student-general-badges-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+body[data-type="Student"] .student-academic-badge {
+  background: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 8px 16px;
+  border-radius: 99px;
+  font-size: 13px;
+  color: #cbd5e1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+body[data-type="Student"] .student-academic-badge i {
+  color: #6366f1;
+}
+
+/* Student Academic timelines first */
+body[data-type="Student"] .student-timeline-layout {
+  width: 100%;
+}
+
+body[data-type="Student"] .student-timeline-flex {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+@media (min-width: 900px) {
+  body[data-type="Student"] .student-timeline-flex {
+    grid-template-columns: 1.1fr 1fr; /* Academics larger */
+  }
+}
+
+body[data-type="Student"] .student-timeline-section-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px;
+  color: #ffffff;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+body[data-type="Student"] .student-timeline-section-title i {
+  color: #6366f1;
+}
+
+body[data-type="Student"] .student-academic-cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+body[data-type="Student"] .student-academic-card {
+  background: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 20px;
+  border-radius: 12px;
+}
+
+body[data-type="Student"] .student-academic-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+body[data-type="Student"] .student-academic-header h5 {
+  font-size: 15px;
+  color: #ffffff;
+}
+
+body[data-type="Student"] .student-year {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  color: #818cf8;
+}
+
+body[data-type="Student"] .student-institution {
+  font-size: 12px;
+  color: #94a3b8;
+  display: block;
+  margin-bottom: 8px;
+}
+
+body[data-type="Student"] .student-academic-desc {
+  font-size: 13px;
+  color: #cbd5e1;
+  line-height: 1.5;
+}
+
+/* Student academic projects */
+body[data-type="Student"] .student-projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+}
+
+@media (min-width: 680px) {
+  body[data-type="Student"] .student-projects-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+body[data-type="Student"] .student-project-card {
+  background: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+body[data-type="Student"] .student-project-img {
+  height: 180px;
+}
+body[data-type="Student"] .student-project-img img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+
+body[data-type="Student"] .student-project-body {
+  padding: 20px;
+}
+
+body[data-type="Student"] .student-project-tags {
+  font-size: 10px;
+  color: #818cf8;
+  display: block;
+  margin-bottom: 8px;
+}
+
+body[data-type="Student"] .student-project-body h4 {
+  font-size: 16px;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+body[data-type="Student"] .student-project-body p {
+  font-size: 13px;
+  color: #cbd5e1;
+  margin-bottom: 15px;
+}
+
+body[data-type="Student"] .student-project-links {
+  display: flex;
+  gap: 15px;
+}
+
+body[data-type="Student"] .student-demo-btn {
+  background: #6366f1;
+  color: white;
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+body[data-type="Student"] .student-code-btn {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 12px;
+  align-self: center;
+}
+
+/* Student academic certificates */
+body[data-type="Student"] .student-credentials-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 600px) {
+  body[data-type="Student"] .student-credentials-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+body[data-type="Student"] .student-cred-card {
+  background: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 24px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+body[data-type="Student"] .student-cred-icon {
+  font-size: 24px;
+  color: #6366f1;
+  margin-bottom: 12px;
+}
+
+body[data-type="Student"] .student-cred-card h5 {
+  font-size: 15px;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+body[data-type="Student"] .student-cred-org,
+body[data-type="Student"] .student-cred-date {
+  font-size: 11px;
+  color: #94a3b8;
+  display: block;
+}
+
+body[data-type="Student"] .student-cred-btn {
+  display: inline-block;
+  margin-top: 15px;
+  color: #818cf8;
+  text-decoration: none;
+  font-size: 12px;
+  border: 1px solid rgba(129, 140, 248, 0.3);
+  padding: 4px 12px;
+  border-radius: 4px;
+}
+
+/* Student Inquiry contact form card */
+body[data-type="Student"] .student-contact-layout {
+  display: flex;
+  justify-content: center;
+}
+
+body[data-type="Student"] .student-contact-card {
+  width: 100%;
+  max-width: 600px;
+  background: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 32px;
+  border-radius: 16px;
+}
+
+body[data-type="Student"] .student-contact-card h3 {
+  font-size: 20px;
+  color: #ffffff;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+body[data-type="Student"] .student-contact-card p {
+  font-size: 13px;
+  color: #94a3b8;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+body[data-type="Student"] .student-form-row {
+  margin-bottom: 20px;
+}
+
+body[data-type="Student"] .student-card-input {
+  width: 100%;
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  padding: 12px 16px;
+  color: #ffffff;
+  font-family: inherit;
+  outline: none;
+}
+
+body[data-type="Student"] .student-card-input.student-textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+body[data-type="Student"] .student-card-input:focus {
+  border-color: #6366f1;
+}
+
+body[data-type="Student"] .student-submit-btn {
+  background-color: #6366f1;
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 14px;
+  border-radius: 6px;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+
+/* ==========================================================================
+   THEME 5: BUSINESS CATEGORY STYLING (EXECUTIVE PROFILE THEME)
+   ========================================================================== */
+body[data-type="Business"] {
+  background-color: #0a0f24;
+  color: #c9d0eb;
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Background Corporate shades */
+body[data-type="Business"] .business-space-bg {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  z-index: -10;
+  background-color: #0a0f24;
+}
+
+/* Navigation Corporate */
+body[data-type="Business"] .business-corporate-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+body[data-type="Business"] .business-menu {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+body[data-type="Business"] .business-menu-item {
+  color: #8c98c0;
+  text-decoration: none;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+body[data-type="Business"] .business-cta-button {
+  background-color: #10b981; /* Emerald corporate */
+  color: white;
+  padding: 8px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Business Hero executive */
+body[data-type="Business"] .business-hero-card {
+  background: #111836;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 40px;
+  border-radius: 16px;
+}
+
+body[data-type="Business"] .business-hero-split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+@media (min-width: 900px) {
+  body[data-type="Business"] .business-hero-split {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+body[data-type="Business"] .business-hero-photo {
+  height: 280px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+body[data-type="Business"] .business-executive-img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+
+body[data-type="Business"] .business-hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+body[data-type="Business"] .business-tag {
+  font-family: var(--font-hud);
+  font-size: 11px;
+  color: #10b981;
+  letter-spacing: 1.5px;
+}
+
+body[data-type="Business"] .business-exec-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 36px;
+  color: #ffffff;
+}
+
+body[data-type="Business"] .business-exec-title {
+  font-size: 16px;
+  color: #8c98c0;
+  margin-bottom: 20px;
+}
+
+body[data-type="Business"] .business-exec-bio {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #c9d0eb;
+  margin-bottom: 25px;
+}
+
+body[data-type="Business"] .business-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 25px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 20px;
+}
+
+body[data-type="Business"] .business-stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+body[data-type="Business"] .stat-num {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+body[data-type="Business"] .stat-lbl {
+  font-size: 11px;
+  color: #8c98c0;
+}
+
+body[data-type="Business"] .business-exec-cta {
+  background: #10b981;
+  color: white;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  width: fit-content;
+}
+
+/* Business Biography */
+body[data-type="Business"] .corporate-profile-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+@media (min-width: 768px) {
+  body[data-type="Business"] .corporate-profile-grid {
+    grid-template-columns: 1.5fr 1fr;
+  }
+}
+
+body[data-type="Business"] .corporate-left-card,
+body[data-type="Business"] .corporate-right-card {
+  background: #111836;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 24px;
+  border-radius: 12px;
+}
+
+body[data-type="Business"] .corporate-left-card h3,
+body[data-type="Business"] .corporate-right-card h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+body[data-type="Business"] .corporate-objective-text {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+body[data-type="Business"] .corporate-node-stats p {
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+body[data-type="Business"] .corporate-node-stats strong {
+  color: #10b981;
+}
+
+/* Business capabilities */
+body[data-type="Business"] .business-capability-blocks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+body[data-type="Business"] .business-cap-card {
+  background: #111836;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+body[data-type="Business"] .cap-code {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 9px;
+  color: #8c98c0;
+}
+
+body[data-type="Business"] .cap-name {
+  font-size: 14px;
+  color: #ffffff;
+  margin-top: 5px;
+}
+
+/* Business timelines executive logs */
+body[data-type="Business"] .business-exec-card {
+  background: #111836;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+body[data-type="Business"] .exec-card-head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+body[data-type="Business"] .exec-card-head h5 {
+  font-size: 15px;
+  color: #ffffff;
+}
+
+body[data-type="Business"] .exec-tag,
+body[data-type="Business"] .exec-tag-blue {
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+body[data-type="Business"] .exec-tag { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+body[data-type="Business"] .exec-tag-blue { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
+
+body[data-type="Business"] .exec-date {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 10px;
+  color: #5e668a;
+  display: block;
+  margin-bottom: 8px;
+}
+
+body[data-type="Business"] .business-exec-card p {
+  font-size: 13px;
+}
+
+/* Business case studies projects */
+body[data-type="Business"] .business-case-studies-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+@media (min-width: 768px) {
+  body[data-type="Business"] .business-case-studies-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+body[data-type="Business"] .business-case-card {
+  background: #111836;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  overflow: hidden;
+}
+
+body[data-type="Business"] .business-case-img {
+  height: 200px;
+}
+body[data-type="Business"] .business-case-img img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+
+body[data-type="Business"] .business-case-body {
+  padding: 24px;
+}
+
+body[data-type="Business"] .business-case-tag {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 10px;
+  color: #10b981;
+  display: block;
+  margin-bottom: 8px;
+}
+
+body[data-type="Business"] .business-case-body h4 {
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+body[data-type="Business"] .business-case-body p {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+body[data-type="Business"] .business-case-link {
+  color: #10b981;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Business Certificates Table */
+body[data-type="Business"] .business-credentials-table {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+body[data-type="Business"] .business-cred-row {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1fr 1fr;
+  background: #111836;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 16px 20px;
+  border-radius: 6px;
+  align-items: center;
+}
+
+@media (max-width: 600px) {
+  body[data-type="Business"] .business-credentials-table {
+    display: block;
+  }
+  body[data-type="Business"] .business-cred-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  body[data-type="Business"] .biz-cred-col.text-right {
+    text-align: left !important;
+  }
+}
+
+body[data-type="Business"] .biz-cred-col.bold {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+body[data-type="Business"] .biz-cred-col.muted {
+  color: #8c98c0;
+}
+
+body[data-type="Business"] .biz-cred-btn {
+  background: transparent;
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  padding: 6px 14px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 11px;
+}
+
+body[data-type="Business"] .biz-cred-col.text-right {
+  text-align: right;
+}
+
+/* Business Contact corporate proposal */
+body[data-type="Business"] .business-contact-layout {
+  display: flex;
+  justify-content: center;
+}
+
+body[data-type="Business"] .business-contact-card {
+  width: 100%;
+  max-width: 600px;
+  background: #111836;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 40px;
+  border-radius: 12px;
+}
+
+body[data-type="Business"] .business-contact-card h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 20px;
+  color: #ffffff;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+body[data-type="Business"] .business-contact-card p {
+  font-size: 13px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+body[data-type="Business"] .biz-form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+body[data-type="Business"] .biz-form-group label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 10px;
+  color: #8c98c0;
+}
+
+body[data-type="Business"] .biz-input-element {
+  width: 100%;
+  background: #0a0f24;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  padding: 12px 16px;
+  color: #ffffff;
+  font-family: inherit;
+  outline: none;
+}
+
+body[data-type="Business"] .biz-input-element.biz-textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+body[data-type="Business"] .biz-input-element:focus {
+  border-color: #10b981;
+}
+
+body[data-type="Business"] .biz-submit-btn {
+  background-color: #10b981;
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 14px;
+  border-radius: 4px;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+
+/* ==========================================================================
+   GLOBAL VIEWPORT CONFIGURATION (COMMON TO ALL CATEGORIES)
+   ========================================================================== */
+.hud-main-viewport {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px 140px;
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+  position: relative;
+  z-index: 1;
+}
+
+.hud-viewport-section {
+  width: 100%;
+  position: relative;
+}
+
+/* Section Header Styles */
+.hud-section-header {
+  position: relative;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.header-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+}
+
+/* Developer Header Details */
+body[data-type="Developer"] .header-line {
+  background: linear-gradient(90deg, #00f2fe 0%, rgba(0, 242, 254, 0.05) 100%);
+}
+body[data-type="Developer"] .hud-section-title { color: #ffffff; }
+
+/* Designer Header Details */
+body[data-type="Designer"] .header-line {
+  background: linear-gradient(90deg, #d4af37 0%, rgba(212, 175, 55, 0.03) 100%);
+}
+body[data-type="Designer"] .hud-section-title { font-family: 'Playfair Display', serif; color: #ffffff; margin-top: 15px; }
+
+/* Freelancer Header Details */
+body[data-type="Freelancer"] .header-line {
+  background: linear-gradient(90deg, #a855f7 0%, rgba(168, 85, 247, 0.03) 100%);
+}
+body[data-type="Freelancer"] .hud-section-title { color: #ffffff; margin-top: 15px; }
+
+/* Student Header Details */
+body[data-type="Student"] .header-line {
+  background: linear-gradient(90deg, #6366f1 0%, rgba(99, 102, 241, 0.03) 100%);
+}
+body[data-type="Student"] .hud-section-title { font-family: 'Space Grotesk', sans-serif; color: #ffffff; margin-top: 15px; }
+
+/* Business Header Details */
+body[data-type="Business"] .header-line {
+  background: linear-gradient(90deg, #10b981 0%, rgba(16, 185, 129, 0.03) 100%);
+}
+body[data-type="Business"] .hud-section-title { font-family: 'Space Grotesk', sans-serif; color: #ffffff; margin-top: 15px; }
+
+.hud-section-title {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.hud-sub-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 11px;
+  color: #5e668a;
+  letter-spacing: 2px;
+  text-indent: 4px;
+}
+
+/* Footer structure */
+.hud-viewport-footer {
+  margin-top: 60px;
+  position: relative;
+  padding-top: 30px;
+}
+
+.footer-hud-lines {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 1px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.02) 100%);
+}
+
+.footer-flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 11px;
+  color: #5e668a;
+}
+
+@media (min-width: 600px) {
+  .footer-flex-container { flex-direction: row; }
+}
+
+
+/* ==========================================================================
+   COMMON GRID DESIGNS
+   ========================================================================== */
+.col-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+@media (min-width: 900px) {
+  .col-2 { grid-template-columns: 1fr 1fr; }
+}
+
+</style>
+</head>
+<body data-type="">
+
+  <!-- Dynamic Theme Backgrounds -->
+  <div class="theme-background-viewport">
+    <!-- 1. Developer Grid Background -->
+    <div class="bg-layer dev-only cyber-space-bg">
+      <div class="space-grid"></div>
+      <div class="scanlines"></div>
+      <div class="cosmic-glow glow-cyan"></div>
+      <div class="cosmic-glow glow-indigo"></div>
+    </div>
+    <!-- 2. Designer Minimal Background -->
+    <div class="bg-layer design-only designer-space-bg">
+      <div class="designer-mesh-glow"></div>
+    </div>
+    <!-- 3. Freelancer Startup Background -->
+    <div class="bg-layer freelance-only freelancer-space-bg">
+      <div class="startup-grid"></div>
+      <div class="startup-glow"></div>
+    </div>
+    <!-- 4. Student Academic Background -->
+    <div class="bg-layer student-only student-space-bg">
+      <div class="academic-dots"></div>
+    </div>
+    <!-- 5. Business Executive Background -->
+    <div class="bg-layer business-only business-space-bg">
+      <div class="corporate-shades"></div>
+    </div>
+  </div>
+
+  <!-- Boot Loader (Developer Category Only) -->
+  <div id="cyber-boot-loader" class="dev-only">
+    <div class="boot-terminal-box">
+      <div class="terminal-bar">
+        <span class="terminal-dot red"></span>
+        <span class="terminal-dot yellow"></span>
+        <span class="terminal-dot green"></span>
+        <span class="terminal-title">system_handshake.sh</span>
+      </div>
+      <div class="boot-console-logs">
+        <p class="log-line text-cyan">&gt; INITIALIZING CORE INTERACTION SYSTEM...</p>
+        <p class="log-line">&gt; ESTABLISHING SECURE CONNECTION NODE...</p>
+        <p class="log-line">&gt; DEPLOYING INTERACTIVE GRID MATRICES...</p>
+        <p class="log-line">&gt; DECRYPTION KEY ACCEPTED [VER=9.4.2]</p>
+        <p class="log-line text-pink">&gt; IDENTITY LOCATED: Jane Doe</p>
+        <p class="log-line text-green">&gt; STATUS: ONLINE. SYSTEM LAUNCH IN PROGRESS...</p>
+      </div>
+      <div class="boot-progress-bar">
+        <div class="boot-progress-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       NAVIGATION LAYER
+       ========================================== -->
+
+  <!-- A. Developer Floating Bottom Navigation Deck -->
+  <nav class="hud-navigation-deck dev-only-flex">
+    <div class="deck-container">
+      <a href="#hero" class="deck-item active" data-tooltip="System Core"><i class="fa-solid fa-microchip"></i><span class="tooltip-text">Core</span></a>
+      <a href="#biography" class="deck-item" data-tooltip="Bio Diagnostics"><i class="fa-solid fa-id-card"></i><span class="tooltip-text">Bio</span></a>
+      <a href="#skills-matrix" class="deck-item" data-tooltip="Skill Array"><i class="fa-solid fa-code-fork"></i><span class="tooltip-text">Skills</span></a>
+      <a href="#timeline-flow" class="deck-item" data-tooltip="Chrono Journey"><i class="fa-solid fa-timeline"></i><span class="tooltip-text">Chrono</span></a>
+      <a href="#project-pods" class="deck-item" data-tooltip="Project Decks"><i class="fa-solid fa-folder-open"></i><span class="tooltip-text">Projects</span></a>
+      <a href="#credentials" class="deck-item" data-tooltip="Verify Nodes"><i class="fa-solid fa-award"></i><span class="tooltip-text">Verify</span></a>
+      <a href="#secure-terminal" class="deck-item" data-tooltip="Transmit Signal"><i class="fa-solid fa-tower-broadcast"></i><span class="tooltip-text">Transmit</span></a>
+    </div>
+  </nav>
+
+  <!-- B. Designer Sleek Top Navigation Bar -->
+  <header class="designer-nav-bar design-only-flex">
+    <div class="nav-brand-designer">Jane Doe</div>
+    <nav class="nav-links-designer">
+      <a href="#hero" class="designer-nav-item active">Core</a>
+      <a href="#biography" class="designer-nav-item">Bio</a>
+      <a href="#skills-matrix" class="designer-nav-item">Focus</a>
+      <a href="#timeline-flow" class="designer-nav-item">Chronology</a>
+      <a href="#project-pods" class="designer-nav-item">Gallery</a>
+      <a href="#secure-terminal" class="designer-nav-item">Contact</a>
+    </nav>
+  </header>
+
+  <!-- C. Freelancer Floating Capsule Header -->
+  <header class="freelancer-capsule-nav freelance-only-flex">
+    <div class="capsule-container">
+      <div class="capsule-logo">Jane Doe</div>
+      <div class="capsule-menu">
+        <a href="#hero" class="capsule-link active">Home</a>
+        <a href="#biography" class="capsule-link">Services</a>
+        <a href="#project-pods" class="capsule-link">Portfolio</a>
+        <a href="#timeline-flow" class="capsule-link">Timeline</a>
+        <a href="#secure-terminal" class="capsule-link highlight">Hire Me</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- D. Student Classic Top Header -->
+  <header class="student-classic-header student-only-flex">
+    <div class="student-logo"><i class="fa-solid fa-graduation-cap"></i> Jane Doe</div>
+    <nav class="student-links">
+      <a href="#timeline-flow" class="student-link">Academics</a>
+      <a href="#skills-matrix" class="student-link">Skills</a>
+      <a href="#project-pods" class="student-link">Projects</a>
+      <a href="#credentials" class="student-link">Certificates</a>
+      <a href="#secure-terminal" class="student-link-btn">Connect</a>
+    </nav>
+  </header>
+
+  <!-- E. Business Corporate Header -->
+  <header class="business-corporate-nav business-only-flex">
+    <div class="business-brand">// Jane Doe // EXECUTIVE</div>
+    <nav class="business-menu">
+      <a href="#hero" class="business-menu-item">Overview</a>
+      <a href="#biography" class="business-menu-item">Leadership</a>
+      <a href="#timeline-flow" class="business-menu-item">Board Journey</a>
+      <a href="#project-pods" class="business-menu-item">Case Studies</a>
+      <a href="#secure-terminal" class="business-cta-button">Inquire</a>
+    </nav>
+  </header>
+
+
+  <!-- ==========================================
+       VIEWPORT MAIN BODY
+       ========================================== -->
+  <main class="hud-main-viewport">
+
+    <!-- ==========================================
+         1. HERO VIEWPORT SECTIONS
+         ========================================== -->
+
+    <!-- A. Developer Hero (Radar Scanner) -->
+    <section id="hero" class="hud-viewport-section dev-only hero-hud-section">
+      <div class="hud-grid-container">
+        <div class="hero-scanner-node">
+          <div class="radar-hud-wrapper">
+            <div class="radar-scanline"></div>
+            <div class="radar-ring outer-ring"></div>
+            <div class="radar-ring middle-ring"></div>
+            <div class="radar-ring inner-ring"></div>
+            <div class="coordinates-overlay">
+              <span class="coord lat">LAT: 35.6762° N</span>
+              <span class="coord lng">LNG: 139.6503° E</span>
+            </div>
+            <div class="radar-image-container">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60" alt="Jane Doe" class="radar-profile-pic" onerror="this.src='https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=400&auto=format&fit=crop';">
+            </div>
+          </div>
+        </div>
+        <div class="hero-console-stats">
+          <div class="status-alert-node">
+            <span class="alert-pulse-light"></span>
+            <span class="alert-label">SYS_STATUS: ACTIVE // READY</span>
+          </div>
+          <h1 class="hud-glitch-title" data-text="Jane Doe">Jane Doe</h1>
+          <h2 class="hud-cyber-subtitle">// CORE: Senior Software Engineer & UI Designer</h2>
+          <div class="terminal-spec-box">
+            <div class="spec-row"><span class="spec-label">CODENAME:</span><span class="spec-value text-cyan">Jane Doe</span></div>
+            <div class="spec-row"><span class="spec-label">SECTOR:</span><span class="spec-value text-indigo">Senior Software Engineer & UI Designer</span></div>
+            <div class="spec-row"><span class="spec-label">ENCRYPTION:</span><span class="spec-value text-pink">AES_256_GCM</span></div>
+            <div class="spec-row"><span class="spec-label">NODE_LATENCY:</span><span class="spec-value text-green" id="latency-val">12ms</span></div>
+          </div>
+          <div class="hud-action-triggers">
+            <a href="#project-pods" class="hud-btn trigger-primary-glow"><span class="btn-text">INITIALIZE DECK</span><i class="fa-solid fa-play"></i></a>
+            <a href="#secure-terminal" class="hud-btn trigger-secondary-glass"><span class="btn-text">TRANSMIT SIGNAL</span><i class="fa-solid fa-paper-plane"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- B. Designer Hero (Offset Typography) -->
+    <section class="hud-viewport-section design-only hero-designer-section">
+      <div class="designer-hero-layout">
+        <div class="designer-hero-info">
+          <span class="designer-tagline">CURATING PREMIUM INTERACTION DESIGNS</span>
+          <h1 class="designer-title-h1">Jane Doe</h1>
+          <h2 class="designer-subtitle-h2">Senior Software Engineer & UI Designer</h2>
+          <p class="designer-intro-paragraph">Passionate designer and developer with 5+ years of experience building beautiful, accessible user interfaces. I love crafting code, tinkering with animations, and deploying serverless web apps.</p>
+          <div class="designer-hero-actions">
+            <a href="#project-pods" class="designer-btn-dark">View Gallery</a>
+            <a href="#secure-terminal" class="designer-btn-light">Get In Touch</a>
+          </div>
+        </div>
+        <div class="designer-hero-frame">
+          <div class="designer-photo-offset"></div>
+          <div class="designer-photo-container">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60" alt="Jane Doe" class="designer-img" onerror="this.src='https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=crop';">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- C. Freelancer Hero (Conversion Focus) -->
+    <section class="hud-viewport-section freelance-only hero-freelancer-section">
+      <div class="freelancer-hero-layout">
+        <div class="freelancer-hero-text">
+          <div class="availability-badge">
+            <span class="pulse-green-dot"></span>
+            <span>Available for Remote Contracts</span>
+          </div>
+          <h1 class="freelancer-heading">Need a high-converting digital product?</h1>
+          <p class="freelancer-subheading">I am Jane Doe — a professional Senior Software Engineer & UI Designer dedicated to building and scaling robust platforms that accelerate business growth.</p>
+          <div class="freelancer-cta-group">
+            <a href="#secure-terminal" class="freelancer-cta-primary">Hire Me Today</a>
+            <a href="#project-pods" class="freelancer-cta-secondary">Explore Case Studies</a>
+          </div>
+        </div>
+        <div class="freelancer-hero-graphics">
+          <div class="freelancer-avatar-wrapper">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60" alt="Jane Doe" class="freelancer-img" onerror="this.src='https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=400&auto=format&fit=crop';">
+            <div class="stats-badge-floater">
+              <strong>99.4%</strong>
+              <span>Job Success</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- D. Student Hero (Friendly Welcome) -->
+    <section class="hud-viewport-section student-only hero-student-section">
+      <div class="student-hero-card">
+        <div class="student-avatar-frame">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60" alt="Jane Doe" class="student-profile-pic" onerror="this.src='https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=400&auto=format&fit=crop';">
+        </div>
+        <h1 class="student-name">Welcome, I am Jane Doe</h1>
+        <h2 class="student-degree-status">Senior Software Engineer & UI Designer</h2>
+        <p class="student-bio-text">Passionate designer and developer with 5+ years of experience building beautiful, accessible user interfaces. I love crafting code, tinkering with animations, and deploying serverless web apps.</p>
+        <div class="student-actions">
+          <a href="#timeline-flow" class="student-btn student-btn-fill">Academic Journey</a>
+          <a href="#secure-terminal" class="student-btn student-btn-outline">Contact Me</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- E. Business Hero (Executive Profile) -->
+    <section class="hud-viewport-section business-only hero-business-section">
+      <div class="business-hero-card">
+        <div class="business-hero-split">
+          <div class="business-hero-photo">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60" alt="Jane Doe" class="business-executive-img" onerror="this.src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400&auto=format&fit=crop';">
+          </div>
+          <div class="business-hero-content">
+            <span class="business-tag">// CHIEF STRATEGIST PROFILE</span>
+            <h1 class="business-exec-name">Jane Doe</h1>
+            <h2 class="business-exec-title">Senior Software Engineer & UI Designer</h2>
+            <p class="business-exec-bio">Passionate designer and developer with 5+ years of experience building beautiful, accessible user interfaces. I love crafting code, tinkering with animations, and deploying serverless web apps.</p>
+            <div class="business-stats-grid">
+              <div class="business-stat-item">
+                <span class="stat-num" id="stat-experience-count">0+</span>
+                <span class="stat-lbl">Positions Held</span>
+              </div>
+              <div class="business-stat-item">
+                <span class="stat-num" id="stat-projects-count">0+</span>
+                <span class="stat-lbl">Deliverables Managed</span>
+              </div>
+              <div class="business-stat-item">
+                <span class="stat-num">100%</span>
+                <span class="stat-lbl">Fulfillment Rate</span>
+              </div>
+            </div>
+            <a href="#secure-terminal" class="business-exec-cta">Schedule Executive Consultation</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         2. BIOGRAPHY / DIAGNOSTICS SECTIONS
+         ========================================== -->
+    <section id="biography" class="hud-viewport-section">
+      <!-- Section Headers -->
+      <div class="hud-section-header dev-only">
+        <div class="header-line"></div>
+        <h2 class="hud-section-title"><span class="accent-number">01.</span> SYSTEM DIAGNOSTICS</h2>
+        <span class="hud-sub-label">BIO_MEMORY_DUMP</span>
+      </div>
+      <div class="hud-section-header design-only">
+        <div class="header-line"></div>
+        <h2 class="hud-section-title">Biography</h2>
+        <span class="hud-sub-label">DESIGN_PARADIGM_SUMMARY</span>
+      </div>
+      <div class="hud-section-header freelance-only">
+        <div class="header-line"></div>
+        <h2 class="hud-section-title">Services &amp; Background</h2>
+        <span class="hud-sub-label">WHAT_I_DELIVER</span>
+      </div>
+      <div class="hud-section-header student-only">
+        <div class="header-line"></div>
+        <h2 class="hud-section-title">Academics Background</h2>
+        <span class="hud-sub-label">CORE_QUALIFICATIONS</span>
+      </div>
+      <div class="hud-section-header business-only">
+        <div class="header-line"></div>
+        <h2 class="hud-section-title">Corporate Leadership</h2>
+        <span class="hud-sub-label">MANAGEMENT_TELEMETRY</span>
+      </div>
+
+      <!-- Categories Specific Biography Layouts -->
+      <div class="biography-theme-router">
+        
+        <!-- A. Developer Diagnostics Layout -->
+        <div class="dev-only hud-grid-layout col-2 glass-panels-container">
+          <div class="hud-glass-card telemetry-card">
+            <div class="card-hud-decal top-right"></div>
+            <div class="card-hud-decal bottom-left"></div>
+            <h3 class="card-hud-title"><i class="fa-solid fa-brain text-cyan"></i> PROFILE SUMMARY</h3>
+            <p class="bio-text-paragraph">Passionate designer and developer with 5+ years of experience building beautiful, accessible user interfaces. I love crafting code, tinkering with animations, and deploying serverless web apps.</p>
+            <div class="diagnostics-bar-group">
+              <div class="diag-bar-wrapper">
+                <div class="diag-bar-labels"><span>Frontend Systems</span><span>95%</span></div>
+                <div class="diag-bar-outer"><div class="diag-bar-inner bar-cyan" style="width: 95%"></div></div>
+              </div>
+              <div class="diag-bar-wrapper">
+                <div class="diag-bar-labels"><span>Backend Operations</span><span>90%</span></div>
+                <div class="diag-bar-outer"><div class="diag-bar-inner bar-indigo" style="width: 90%"></div></div>
+              </div>
+              <div class="diag-bar-wrapper">
+                <div class="diag-bar-labels"><span>Architecture Design</span><span>85%</span></div>
+                <div class="diag-bar-outer"><div class="diag-bar-inner bar-pink" style="width: 85%"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="hud-glass-card telemetry-card">
+            <div class="card-hud-decal top-left"></div>
+            <div class="card-hud-decal bottom-right"></div>
+            <h3 class="card-hud-title"><i class="fa-solid fa-server text-pink"></i> SECTOR SPECS</h3>
+            <div class="metadata-node-list">
+              <div class="meta-node-item">
+                <div class="meta-node-icon"><i class="fa-solid fa-map-pin"></i></div>
+                <div class="meta-node-content"><span class="meta-node-title">DEPLOYMENT LOCATION</span><span class="meta-node-desc text-cyan">San Francisco, CA</span></div>
+              </div>
+              <div class="meta-node-item">
+                <div class="meta-node-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div class="meta-node-content"><span class="meta-node-title">SECURE COMMUNICATIONS</span><span class="meta-node-desc text-indigo">jane.doe@example.com</span></div>
+              </div>
+              <div class="meta-node-item">
+                <div class="meta-node-icon"><i class="fa-solid fa-phone"></i></div>
+                <div class="meta-node-content"><span class="meta-node-title">PSTN FREQUENCY</span><span class="meta-node-desc text-pink">+1 (555) 019-2834</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- B. Designer Minimalist Bio (No Code Metrics, Elegant Typography) -->
+        <div class="design-only designer-bio-block">
+          <div class="designer-bio-split-grid">
+            <div class="designer-bio-left">
+              <h3 class="designer-bio-header">Creative Philosophy</h3>
+              <p class="designer-philosophy-quote">"Design is not just what it looks like and feels like. Design is how it works."</p>
+              <p class="designer-bio-desc-text">Passionate designer and developer with 5+ years of experience building beautiful, accessible user interfaces. I love crafting code, tinkering with animations, and deploying serverless web apps.</p>
+            </div>
+            <div class="designer-bio-right">
+              <h3 class="designer-bio-header">Coordinates</h3>
+              <div class="designer-coords-list">
+                <div class="designer-coord-row"><span class="coord-lbl">Origin:</span><span class="coord-val">San Francisco, CA</span></div>
+                <div class="designer-coord-row"><span class="coord-lbl">Channel:</span><span class="coord-val">jane.doe@example.com</span></div>
+                <div class="designer-coord-row"><span class="coord-lbl">Contact:</span><span class="coord-val">+1 (555) 019-2834</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- C. Freelancer Service Cards Layout -->
+        <div class="freelance-only freelancer-services-wrapper">
+          <div class="services-headline">
+            <h3>Custom Technical Solutions Built For Scale</h3>
+            <p>I help startups, corporate companies, and agencies ship high-quality products. Here is my expertise configuration:</p>
+          </div>
+          <div class="services-cards-grid">
+            <div class="service-card-item">
+              <div class="service-card-icon"><i class="fa-solid fa-rocket"></i></div>
+              <h4>Fullstack Engineering</h4>
+              <p>End-to-end web architectures featuring highly secure databases and high performance caching systems.</p>
+            </div>
+            <div class="service-card-item">
+              <div class="service-card-icon"><i class="fa-solid fa-bezier-curve"></i></div>
+              <h4>UI/UX Strategy</h4>
+              <p>Converting visitor behaviors into user acquisitions through premium layouts, responsive grids, and conversions.</p>
+            </div>
+            <div class="service-card-item">
+              <div class="service-card-icon"><i class="fa-solid fa-chart-line"></i></div>
+              <h4>Performance Auditing</h4>
+              <p>Debugging slow components, refactoring API queries, and boosting Lighthouse scores by 40%.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- D. Student Academic Background Card -->
+        <div class="student-only student-academic-summary">
+          <div class="student-summary-card">
+            <h3>Profile Summary</h3>
+            <p class="student-summary-bio">Passionate designer and developer with 5+ years of experience building beautiful, accessible user interfaces. I love crafting code, tinkering with animations, and deploying serverless web apps.</p>
+            <div class="academic-quick-stats">
+              <div class="academic-stat"><i class="fa-solid fa-location-dot"></i> <span>San Francisco, CA</span></div>
+              <div class="academic-stat"><i class="fa-solid fa-envelope"></i> <span>jane.doe@example.com</span></div>
+              <div class="academic-stat"><i class="fa-solid fa-phone"></i> <span>+1 (555) 019-2834</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- E. Business Executive Panel -->
+        <div class="business-only business-executive-telemetry">
+          <div class="corporate-profile-grid">
+            <div class="corporate-left-card">
+              <h3>Corporate Objective</h3>
+              <p class="corporate-objective-text">Passionate designer and developer with 5+ years of experience building beautiful, accessible user interfaces. I love crafting code, tinkering with animations, and deploying serverless web apps.</p>
+            </div>
+            <div class="corporate-right-card">
+              <h3>Contact Operations</h3>
+              <div class="corporate-node-stats">
+                <p><strong>OFFICE:</strong> San Francisco, CA</p>
+                <p><strong>INQUIRIES:</strong> jane.doe@example.com</p>
+                <p><strong>MOBILE SECURE:</strong> +1 (555) 019-2834</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         3. SKILLS MATRIX SECTIONS
+         ========================================== -->
+    <section id="skills-matrix" class="hud-viewport-section">
+      <!-- Section Headers -->
+      <div class="hud-section-header dev-only"><div class="header-line"></div><h2 class="hud-section-title"><span class="accent-number">02.</span> CORE MATRIX</h2><span class="hud-sub-label">SKILL_HARDWARE_ARRAY</span></div>
+      <div class="hud-section-header design-only"><div class="header-line"></div><h2 class="hud-section-title">Focus &amp; Disciplines</h2><span class="hud-sub-label">CREATIVE_TOOLSET</span></div>
+      <div class="hud-section-header freelance-only"><div class="header-line"></div><h2 class="hud-section-title">Specialized Services</h2><span class="hud-sub-label">EXPERTISE_ARRAY</span></div>
+      <div class="hud-section-header student-only"><div class="header-line"></div><h2 class="hud-section-title">Core Skills</h2><span class="hud-sub-label">ACADEMIC_COMPETENCIES</span></div>
+      <div class="hud-section-header business-only"><div class="header-line"></div><h2 class="hud-section-title">Corporate Competencies</h2><span class="hud-sub-label">EXECUTIVE_CAPABILITIES</span></div>
+
+      <!-- Skills Theme Router (Class controls style layout dynamically) -->
+      <div class="skills-array-wrapper">
+        
+        <!-- A. Developer Wire Chips -->
+        <div class="dev-only skills-hardware-grid">
+          
+          <div class="skill-chip-node" data-skill-name="React">
+            <div class="chip-port-light"></div>
+            <div class="chip-label">React</div>
+            <div class="chip-connection-wires"><span class="wire wire-1"></span><span class="wire wire-2"></span></div>
+          </div>
+          
+          <div class="skill-chip-node" data-skill-name="Node.js">
+            <div class="chip-port-light"></div>
+            <div class="chip-label">Node.js</div>
+            <div class="chip-connection-wires"><span class="wire wire-1"></span><span class="wire wire-2"></span></div>
+          </div>
+          
+          <div class="skill-chip-node" data-skill-name="TypeScript">
+            <div class="chip-port-light"></div>
+            <div class="chip-label">TypeScript</div>
+            <div class="chip-connection-wires"><span class="wire wire-1"></span><span class="wire wire-2"></span></div>
+          </div>
+          
+          <div class="skill-chip-node" data-skill-name="MongoDB">
+            <div class="chip-port-light"></div>
+            <div class="chip-label">MongoDB</div>
+            <div class="chip-connection-wires"><span class="wire wire-1"></span><span class="wire wire-2"></span></div>
+          </div>
+          
+          <div class="skill-chip-node" data-skill-name="Figma">
+            <div class="chip-port-light"></div>
+            <div class="chip-label">Figma</div>
+            <div class="chip-connection-wires"><span class="wire wire-1"></span><span class="wire wire-2"></span></div>
+          </div>
+          
+          <div class="skill-chip-node" data-skill-name="UI/UX Design">
+            <div class="chip-port-light"></div>
+            <div class="chip-label">UI/UX Design</div>
+            <div class="chip-connection-wires"><span class="wire wire-1"></span><span class="wire wire-2"></span></div>
+          </div>
+          
+          <div class="skill-chip-node" data-skill-name="CSS Grid">
+            <div class="chip-port-light"></div>
+            <div class="chip-label">CSS Grid</div>
+            <div class="chip-connection-wires"><span class="wire wire-1"></span><span class="wire wire-2"></span></div>
+          </div>
+          
+          <div class="skill-chip-node" data-skill-name="Tailwind CSS">
+            <div class="chip-port-light"></div>
+            <div class="chip-label">Tailwind CSS</div>
+            <div class="chip-connection-wires"><span class="wire wire-1"></span><span class="wire wire-2"></span></div>
+          </div>
+          
+          <div class="skill-chip-node" data-skill-name="Docker">
+            <div class="chip-port-light"></div>
+            <div class="chip-label">Docker</div>
+            <div class="chip-connection-wires"><span class="wire wire-1"></span><span class="wire wire-2"></span></div>
+          </div>
+          
+          <div class="skill-chip-node" data-skill-name="Git">
+            <div class="chip-port-light"></div>
+            <div class="chip-label">Git</div>
+            <div class="chip-connection-wires"><span class="wire wire-1"></span><span class="wire wire-2"></span></div>
+          </div>
+          
+        </div>
+
+        <!-- B. Designer Elegant Tags -->
+        <div class="design-only designer-skills-layout">
+          <div class="designer-skills-tags-container">
+            
+            <span class="designer-elegant-tag">// React</span>
+            
+            <span class="designer-elegant-tag">// Node.js</span>
+            
+            <span class="designer-elegant-tag">// TypeScript</span>
+            
+            <span class="designer-elegant-tag">// MongoDB</span>
+            
+            <span class="designer-elegant-tag">// Figma</span>
+            
+            <span class="designer-elegant-tag">// UI/UX Design</span>
+            
+            <span class="designer-elegant-tag">// CSS Grid</span>
+            
+            <span class="designer-elegant-tag">// Tailwind CSS</span>
+            
+            <span class="designer-elegant-tag">// Docker</span>
+            
+            <span class="designer-elegant-tag">// Git</span>
+            
+          </div>
+        </div>
+
+        <!-- C. Freelancer Service Tiers Grid -->
+        <div class="freelance-only freelancer-services-tiers-grid">
+          
+          <div class="freelancer-tier-card">
+            <div class="tier-indicator-dot"></div>
+            <h5>React</h5>
+            <p>Ready to deploy and optimize this technology component for your product workflows.</p>
+          </div>
+          
+          <div class="freelancer-tier-card">
+            <div class="tier-indicator-dot"></div>
+            <h5>Node.js</h5>
+            <p>Ready to deploy and optimize this technology component for your product workflows.</p>
+          </div>
+          
+          <div class="freelancer-tier-card">
+            <div class="tier-indicator-dot"></div>
+            <h5>TypeScript</h5>
+            <p>Ready to deploy and optimize this technology component for your product workflows.</p>
+          </div>
+          
+          <div class="freelancer-tier-card">
+            <div class="tier-indicator-dot"></div>
+            <h5>MongoDB</h5>
+            <p>Ready to deploy and optimize this technology component for your product workflows.</p>
+          </div>
+          
+          <div class="freelancer-tier-card">
+            <div class="tier-indicator-dot"></div>
+            <h5>Figma</h5>
+            <p>Ready to deploy and optimize this technology component for your product workflows.</p>
+          </div>
+          
+          <div class="freelancer-tier-card">
+            <div class="tier-indicator-dot"></div>
+            <h5>UI/UX Design</h5>
+            <p>Ready to deploy and optimize this technology component for your product workflows.</p>
+          </div>
+          
+          <div class="freelancer-tier-card">
+            <div class="tier-indicator-dot"></div>
+            <h5>CSS Grid</h5>
+            <p>Ready to deploy and optimize this technology component for your product workflows.</p>
+          </div>
+          
+          <div class="freelancer-tier-card">
+            <div class="tier-indicator-dot"></div>
+            <h5>Tailwind CSS</h5>
+            <p>Ready to deploy and optimize this technology component for your product workflows.</p>
+          </div>
+          
+          <div class="freelancer-tier-card">
+            <div class="tier-indicator-dot"></div>
+            <h5>Docker</h5>
+            <p>Ready to deploy and optimize this technology component for your product workflows.</p>
+          </div>
+          
+          <div class="freelancer-tier-card">
+            <div class="tier-indicator-dot"></div>
+            <h5>Git</h5>
+            <p>Ready to deploy and optimize this technology component for your product workflows.</p>
+          </div>
+          
+        </div>
+
+        <!-- D. Student Academic Badges (Support IT check in script) -->
+        <div class="student-only student-skills-badges-layout">
+          <!-- IT Metrics block (Hides dynamically if Student is not in CS/IT) -->
+          <div class="student-it-metrics-block" id="student-it-metrics-container">
+            <h4 class="student-it-header"><i class="fa-solid fa-code text-indigo"></i> Technical Metrics Detected</h4>
+            <div class="student-it-metrics-row">
+              <span>Fullstack Logic: 80%</span>
+              <span>UI/UX Standards: 90%</span>
+            </div>
+          </div>
+          <div class="student-general-badges-grid">
+            
+            <span class="student-academic-badge"><i class="fa-solid fa-circle-check"></i> React</span>
+            
+            <span class="student-academic-badge"><i class="fa-solid fa-circle-check"></i> Node.js</span>
+            
+            <span class="student-academic-badge"><i class="fa-solid fa-circle-check"></i> TypeScript</span>
+            
+            <span class="student-academic-badge"><i class="fa-solid fa-circle-check"></i> MongoDB</span>
+            
+            <span class="student-academic-badge"><i class="fa-solid fa-circle-check"></i> Figma</span>
+            
+            <span class="student-academic-badge"><i class="fa-solid fa-circle-check"></i> UI/UX Design</span>
+            
+            <span class="student-academic-badge"><i class="fa-solid fa-circle-check"></i> CSS Grid</span>
+            
+            <span class="student-academic-badge"><i class="fa-solid fa-circle-check"></i> Tailwind CSS</span>
+            
+            <span class="student-academic-badge"><i class="fa-solid fa-circle-check"></i> Docker</span>
+            
+            <span class="student-academic-badge"><i class="fa-solid fa-circle-check"></i> Git</span>
+            
+          </div>
+        </div>
+
+        <!-- E. Business Corporate Capabilities -->
+        <div class="business-only business-capabilities-layout">
+          <div class="business-capability-blocks">
+            
+            <div class="business-cap-card">
+              <span class="cap-code">CAP_ID: React</span>
+              <h5 class="cap-name">React</h5>
+            </div>
+            
+            <div class="business-cap-card">
+              <span class="cap-code">CAP_ID: Node.js</span>
+              <h5 class="cap-name">Node.js</h5>
+            </div>
+            
+            <div class="business-cap-card">
+              <span class="cap-code">CAP_ID: TypeScript</span>
+              <h5 class="cap-name">TypeScript</h5>
+            </div>
+            
+            <div class="business-cap-card">
+              <span class="cap-code">CAP_ID: MongoDB</span>
+              <h5 class="cap-name">MongoDB</h5>
+            </div>
+            
+            <div class="business-cap-card">
+              <span class="cap-code">CAP_ID: Figma</span>
+              <h5 class="cap-name">Figma</h5>
+            </div>
+            
+            <div class="business-cap-card">
+              <span class="cap-code">CAP_ID: UI/UX Design</span>
+              <h5 class="cap-name">UI/UX Design</h5>
+            </div>
+            
+            <div class="business-cap-card">
+              <span class="cap-code">CAP_ID: CSS Grid</span>
+              <h5 class="cap-name">CSS Grid</h5>
+            </div>
+            
+            <div class="business-cap-card">
+              <span class="cap-code">CAP_ID: Tailwind CSS</span>
+              <h5 class="cap-name">Tailwind CSS</h5>
+            </div>
+            
+            <div class="business-cap-card">
+              <span class="cap-code">CAP_ID: Docker</span>
+              <h5 class="cap-name">Docker</h5>
+            </div>
+            
+            <div class="business-cap-card">
+              <span class="cap-code">CAP_ID: Git</span>
+              <h5 class="cap-name">Git</h5>
+            </div>
+            
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         4. CHRONO TIMELINE SECTIONS
+         ========================================== -->
+    <section id="timeline-flow" class="hud-viewport-section">
+      <!-- Section Headers -->
+      <div class="hud-section-header dev-only"><div class="header-line"></div><h2 class="hud-section-title"><span class="accent-number">03.</span> CHRONO JOURNEY</h2><span class="hud-sub-label">HISTORY_LOG_STREAM</span></div>
+      <div class="hud-section-header design-only"><div class="header-line"></div><h2 class="hud-section-title">Chronology</h2><span class="hud-sub-label">CREATIVE_EXP_HISTORY</span></div>
+      <div class="hud-section-header freelance-only"><div class="header-line"></div><h2 class="hud-section-title">Contracts &amp; Experience</h2><span class="hud-sub-label">COMMERCIAL_JOURNEY</span></div>
+      <div class="hud-section-header student-only"><div class="header-line"></div><h2 class="hud-section-title">Education &amp; Credentials</h2><span class="hud-sub-label">ACADEMIC_CREDENTIALS</span></div>
+      <div class="hud-section-header business-only"><div class="header-line"></div><h2 class="hud-section-title">Executive Board Journey</h2><span class="hud-sub-label">MANAGEMENT_MILESTONES</span></div>
+
+      <!-- Categories Timelines Router -->
+      <div class="timeline-double-grid">
+        
+        <!-- A. Developer Timelines (Server Racks) -->
+        <div class="dev-only dev-timeline-subgrid">
+          <div class="timeline-double-grid">
+            <!-- Experience -->
+            <div class="timeline-hud-column">
+              <h3 class="column-hud-header"><i class="fa-solid fa-business-time text-cyan"></i> WORK_STATIONS</h3>
+              <div class="server-racks-container" id="experience-rack-list">
+                
+                <div class="server-rack-card">
+                  <div class="rack-status-light active"></div>
+                  <div class="rack-content">
+                    <div class="rack-header">
+                      <h4 class="rack-title">Senior Software Engineer</h4>
+                      <span class="rack-tag cyan">Tech Solutions Inc.</span>
+                    </div>
+                    <div class="rack-meta">STREAM_PERIOD: Jan 2023 - Present</div>
+                    <p class="rack-desc">Lead developer for high-traffic e-commerce portal, improving page speed by 40% and conversion rate by 15% through modern UI rebuilds in React.</p>
+                  </div>
+                </div>
+                
+                <div class="server-rack-card">
+                  <div class="rack-status-light active"></div>
+                  <div class="rack-content">
+                    <div class="rack-header">
+                      <h4 class="rack-title">Web Developer</h4>
+                      <span class="rack-tag cyan">Creative Media Agency</span>
+                    </div>
+                    <div class="rack-meta">STREAM_PERIOD: Jun 2021 - Dec 2022</div>
+                    <p class="rack-desc">Built and maintained 30+ responsive websites for diverse clients, resulting in multiple local design awards.</p>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+            <!-- Education -->
+            <div class="timeline-hud-column">
+              <h3 class="column-hud-header"><i class="fa-solid fa-graduation-cap text-pink"></i> EDUCATION_NODES</h3>
+              <div class="server-racks-container" id="education-rack-list">
+                
+                <div class="server-rack-card">
+                  <div class="rack-status-light active-pink"></div>
+                  <div class="rack-content">
+                    <div class="rack-header">
+                      <h4 class="rack-title">B.S. in Computer Science</h4>
+                      <span class="rack-tag pink">State Tech University</span>
+                    </div>
+                    <div class="rack-meta">GRAD_YEAR: 2021</div>
+                    <p class="rack-desc">Graduated with honors, focusing on human-computer interaction and web design.</p>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- B. Designer Timeline (Thin Elegant Line) -->
+        <div class="design-only design-timeline-layout">
+          <div class="designer-timeline-main-line"></div>
+          <div class="designer-timeline-grid">
+            <!-- Experience Loops -->
+            <div class="designer-time-col">
+              <h4>Creative Works</h4>
+              <div class="designer-nodes-list" id="experience-designer-list">
+                
+                <div class="designer-timeline-node">
+                  <div class="node-bullet"></div>
+                  <span class="node-year">// Jan 2023 - Present</span>
+                  <h5>Senior Software Engineer</h5>
+                  <span class="node-location">Tech Solutions Inc.</span>
+                  <p>Lead developer for high-traffic e-commerce portal, improving page speed by 40% and conversion rate by 15% through modern UI rebuilds in React.</p>
+                </div>
+                
+                <div class="designer-timeline-node">
+                  <div class="node-bullet"></div>
+                  <span class="node-year">// Jun 2021 - Dec 2022</span>
+                  <h5>Web Developer</h5>
+                  <span class="node-location">Creative Media Agency</span>
+                  <p>Built and maintained 30+ responsive websites for diverse clients, resulting in multiple local design awards.</p>
+                </div>
+                
+              </div>
+            </div>
+            <!-- Education Loops -->
+            <div class="designer-time-col">
+              <h4>Academic Studies</h4>
+              <div class="designer-nodes-list" id="education-designer-list">
+                
+                <div class="designer-timeline-node">
+                  <div class="node-bullet"></div>
+                  <span class="node-year">// 2021</span>
+                  <h5>B.S. in Computer Science</h5>
+                  <span class="node-location">State Tech University</span>
+                  <p>Graduated with honors, focusing on human-computer interaction and web design.</p>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- C. Freelancer Timeline (Contracts and Milestones) -->
+        <div class="freelance-only freelance-timeline-layout">
+          <div class="freelancer-timeline-block">
+            <div class="timeline-double-grid">
+              <div class="freelance-time-col">
+                <h4>Contracts Completed</h4>
+                <div class="freelancer-racks" id="experience-freelance-list">
+                  
+                  <div class="freelancer-rack-card">
+                    <div class="rack-header-fl">
+                      <h5>Senior Software Engineer</h5>
+                      <span class="fl-tag">Tech Solutions Inc.</span>
+                    </div>
+                    <span class="fl-meta">Period: Jan 2023 - Present</span>
+                    <p>Lead developer for high-traffic e-commerce portal, improving page speed by 40% and conversion rate by 15% through modern UI rebuilds in React.</p>
+                  </div>
+                  
+                  <div class="freelancer-rack-card">
+                    <div class="rack-header-fl">
+                      <h5>Web Developer</h5>
+                      <span class="fl-tag">Creative Media Agency</span>
+                    </div>
+                    <span class="fl-meta">Period: Jun 2021 - Dec 2022</span>
+                    <p>Built and maintained 30+ responsive websites for diverse clients, resulting in multiple local design awards.</p>
+                  </div>
+                  
+                </div>
+              </div>
+              <div class="freelance-time-col">
+                <h4>Education Background</h4>
+                <div class="freelancer-racks" id="education-freelance-list">
+                  
+                  <div class="freelancer-rack-card">
+                    <div class="rack-header-fl">
+                      <h5>B.S. in Computer Science</h5>
+                      <span class="fl-tag-pink">State Tech University</span>
+                    </div>
+                    <span class="fl-meta">Grad Year: 2021</span>
+                    <p>Graduated with honors, focusing on human-computer interaction and web design.</p>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- D. Student Timeline (Academic History First) -->
+        <div class="student-only student-timeline-layout">
+          <div class="student-timeline-flex">
+            <!-- Academic First -->
+            <div class="student-academic-timeline-col">
+              <h4 class="student-timeline-section-title"><i class="fa-solid fa-book-open"></i> Academic Credentials</h4>
+              <div class="student-academic-cards-container" id="education-student-list">
+                
+                <div class="student-academic-card">
+                  <div class="student-academic-header">
+                    <h5>B.S. in Computer Science</h5>
+                    <span class="student-year">2021</span>
+                  </div>
+                  <span class="student-institution">State Tech University</span>
+                  <p class="student-academic-desc">Graduated with honors, focusing on human-computer interaction and web design.</p>
+                </div>
+                
+              </div>
+            </div>
+            <!-- Work/Internships -->
+            <div class="student-academic-timeline-col">
+              <h4 class="student-timeline-section-title"><i class="fa-solid fa-briefcase"></i> Work &amp; Internships</h4>
+              <div class="student-academic-cards-container" id="experience-student-list">
+                
+                <div class="student-academic-card">
+                  <div class="student-academic-header">
+                    <h5>Senior Software Engineer</h5>
+                    <span class="student-year">Jan 2023 - Present</span>
+                  </div>
+                  <span class="student-institution">Tech Solutions Inc.</span>
+                  <p class="student-academic-desc">Lead developer for high-traffic e-commerce portal, improving page speed by 40% and conversion rate by 15% through modern UI rebuilds in React.</p>
+                </div>
+                
+                <div class="student-academic-card">
+                  <div class="student-academic-header">
+                    <h5>Web Developer</h5>
+                    <span class="student-year">Jun 2021 - Dec 2022</span>
+                  </div>
+                  <span class="student-institution">Creative Media Agency</span>
+                  <p class="student-academic-desc">Built and maintained 30+ responsive websites for diverse clients, resulting in multiple local design awards.</p>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- E. Business Timeline (Executive Leadership) -->
+        <div class="business-only business-timeline-layout">
+          <div class="business-exec-timeline">
+            <div class="timeline-double-grid">
+              <div class="business-exec-col">
+                <h4>Leadership Roles</h4>
+                <div class="business-racks" id="experience-business-list">
+                  
+                  <div class="business-exec-card">
+                    <div class="exec-card-head">
+                      <h5>Senior Software Engineer</h5>
+                      <span class="exec-tag">Tech Solutions Inc.</span>
+                    </div>
+                    <span class="exec-date">PERIOD: Jan 2023 - Present</span>
+                    <p>Lead developer for high-traffic e-commerce portal, improving page speed by 40% and conversion rate by 15% through modern UI rebuilds in React.</p>
+                  </div>
+                  
+                  <div class="business-exec-card">
+                    <div class="exec-card-head">
+                      <h5>Web Developer</h5>
+                      <span class="exec-tag">Creative Media Agency</span>
+                    </div>
+                    <span class="exec-date">PERIOD: Jun 2021 - Dec 2022</span>
+                    <p>Built and maintained 30+ responsive websites for diverse clients, resulting in multiple local design awards.</p>
+                  </div>
+                  
+                </div>
+              </div>
+              <div class="business-exec-col">
+                <h4>Credentials &amp; Education</h4>
+                <div class="business-racks" id="education-business-list">
+                  
+                  <div class="business-exec-card">
+                    <div class="exec-card-head">
+                      <h5>B.S. in Computer Science</h5>
+                      <span class="exec-tag-blue">State Tech University</span>
+                    </div>
+                    <span class="exec-date">ACADEMIC_YEAR: 2021</span>
+                    <p>Graduated with honors, focusing on human-computer interaction and web design.</p>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         5. PROJECT VIEWPORTS SECTIONS
+         ========================================== -->
+    <section id="project-pods" class="hud-viewport-section">
+      <!-- Section Headers -->
+      <div class="hud-section-header dev-only"><div class="header-line"></div><h2 class="hud-section-title"><span class="accent-number">04.</span> PROJECT VIEWPORTS</h2><span class="hud-sub-label">COMPILATION_DECK_ACTIVE</span></div>
+      <div class="hud-section-header design-only"><div class="header-line"></div><h2 class="hud-section-title">Visual Gallery</h2><span class="hud-sub-label">CREATIVE_CASE_STUDIES</span></div>
+      <div class="hud-section-header freelance-only"><div class="header-line"></div><h2 class="hud-section-title">Case Studies &amp; Projects</h2><span class="hud-sub-label">COMMERCIAL_PORTFOLIO</span></div>
+      <div class="hud-section-header student-only"><div class="header-line"></div><h2 class="hud-section-title">Academic Projects</h2><span class="hud-sub-label">COMPLETED_COURSEWORK</span></div>
+      <div class="hud-section-header business-only"><div class="header-line"></div><h2 class="hud-section-title">Corporate Case Studies</h2><span class="hud-sub-label">ENTERPRISE_DELIVERABLES</span></div>
+
+      <!-- Categories Projects Grid Router -->
+      <div class="projects-theme-router">
+        
+        <!-- A. Developer Isometric Pods -->
+        <div class="dev-only project-pods-grid">
+          
+          <div class="project-pod-card">
+            <div class="pod-border-lines"></div>
+            <div class="pod-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=500&auto=format&fit=crop&q=60" alt="Interactive Design System" class="pod-screenshot" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=400&auto=format&fit=crop';">
+              <div class="pod-overlay-hologram"><span class="holo-text">PROJECTION ACTIVE</span></div>
+            </div>
+            <div class="pod-content">
+              <div class="pod-tags" data-technologies="React, Tailwind, Storybook"></div>
+              <h3 class="pod-title">Interactive Design System</h3>
+              <p class="pod-desc">A comprehensive, modular CSS design token library built for lightning-fast premium website layout creations.</p>
+              <div class="pod-actions-dock">
+                <a href="https://github.com" target="_blank" class="pod-dock-btn source-btn"><i class="fa-brands fa-github"></i><span>SOURCE_LOG</span></a>
+                <a href="https://example.com" target="_blank" class="pod-dock-btn demo-btn"><i class="fa-solid fa-terminal"></i><span>INITIALIZE</span></a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="project-pod-card">
+            <div class="pod-border-lines"></div>
+            <div class="pod-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&auto=format&fit=crop&q=60" alt="Analytics Dashboard App" class="pod-screenshot" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=400&auto=format&fit=crop';">
+              <div class="pod-overlay-hologram"><span class="holo-text">PROJECTION ACTIVE</span></div>
+            </div>
+            <div class="pod-content">
+              <div class="pod-tags" data-technologies="Node.js, Chart.js, WebSockets"></div>
+              <h3 class="pod-title">Analytics Dashboard App</h3>
+              <p class="pod-desc">Real-time performance metrics monitor aggregating visual charts and tables for system health telemetry.</p>
+              <div class="pod-actions-dock">
+                <a href="https://github.com" target="_blank" class="pod-dock-btn source-btn"><i class="fa-brands fa-github"></i><span>SOURCE_LOG</span></a>
+                <a href="https://example.com" target="_blank" class="pod-dock-btn demo-btn"><i class="fa-solid fa-terminal"></i><span>INITIALIZE</span></a>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+
+        <!-- B. Designer Masonry Visual Gallery -->
+        <div class="design-only designer-projects-gallery">
+          <div class="designer-gallery-grid">
+            
+            <div class="designer-gallery-item">
+              <div class="designer-gallery-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=500&auto=format&fit=crop&q=60" alt="Interactive Design System" class="designer-gallery-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=400&auto=format&fit=crop';">
+                <div class="designer-gallery-overlay">
+                  <div class="designer-overlay-content">
+                    <span class="designer-gallery-tags" data-technologies="React, Tailwind, Storybook"></span>
+                    <h4 class="designer-gallery-title">Interactive Design System</h4>
+                    <p class="designer-gallery-desc">A comprehensive, modular CSS design token library built for lightning-fast premium website layout creations.</p>
+                    <div class="designer-gallery-links">
+                      <a href="https://example.com" target="_blank" class="designer-gallery-link">Explore Case <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="designer-gallery-item">
+              <div class="designer-gallery-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&auto=format&fit=crop&q=60" alt="Analytics Dashboard App" class="designer-gallery-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=400&auto=format&fit=crop';">
+                <div class="designer-gallery-overlay">
+                  <div class="designer-overlay-content">
+                    <span class="designer-gallery-tags" data-technologies="Node.js, Chart.js, WebSockets"></span>
+                    <h4 class="designer-gallery-title">Analytics Dashboard App</h4>
+                    <p class="designer-gallery-desc">Real-time performance metrics monitor aggregating visual charts and tables for system health telemetry.</p>
+                    <div class="designer-gallery-links">
+                      <a href="https://example.com" target="_blank" class="designer-gallery-link">Explore Case <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+        <!-- C. Freelancer Commercial Portfolio Deck -->
+        <div class="freelance-only freelancer-portfolio-layout">
+          <div class="freelancer-portfolio-grid">
+            
+            <div class="freelancer-project-card">
+              <div class="fl-project-img">
+                <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=500&auto=format&fit=crop&q=60" alt="Interactive Design System" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=400&auto=format&fit=crop';">
+              </div>
+              <div class="fl-project-body">
+                <div class="fl-project-tags" data-technologies="React, Tailwind, Storybook"></div>
+                <h4>Interactive Design System</h4>
+                <p>A comprehensive, modular CSS design token library built for lightning-fast premium website layout creations.</p>
+                <div class="fl-project-links">
+                  <a href="https://example.com" target="_blank" class="fl-demo-trigger">Launch Live Application <i class="fa-solid fa-rocket"></i></a>
+                  <a href="https://github.com" target="_blank" class="fl-code-link">Review Codebase</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="freelancer-project-card">
+              <div class="fl-project-img">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&auto=format&fit=crop&q=60" alt="Analytics Dashboard App" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=400&auto=format&fit=crop';">
+              </div>
+              <div class="fl-project-body">
+                <div class="fl-project-tags" data-technologies="Node.js, Chart.js, WebSockets"></div>
+                <h4>Analytics Dashboard App</h4>
+                <p>Real-time performance metrics monitor aggregating visual charts and tables for system health telemetry.</p>
+                <div class="fl-project-links">
+                  <a href="https://example.com" target="_blank" class="fl-demo-trigger">Launch Live Application <i class="fa-solid fa-rocket"></i></a>
+                  <a href="https://github.com" target="_blank" class="fl-code-link">Review Codebase</a>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+        <!-- E. Business Corporate Case Studies -->
+        <div class="business-only business-case-studies-layout">
+          <div class="business-case-studies-grid">
+            
+            <div class="business-case-card">
+              <div class="business-case-img">
+                <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=500&auto=format&fit=crop&q=60" alt="Interactive Design System" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=400&auto=format&fit=crop';">
+              </div>
+              <div class="business-case-body">
+                <span class="business-case-tag" data-technologies="React, Tailwind, Storybook"></span>
+                <h4>Interactive Design System</h4>
+                <p>A comprehensive, modular CSS design token library built for lightning-fast premium website layout creations.</p>
+                <a href="https://example.com" target="_blank" class="business-case-link">Access Project Brief <i class="fa-solid fa-file-invoice"></i></a>
+              </div>
+            </div>
+            
+            <div class="business-case-card">
+              <div class="business-case-img">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&auto=format&fit=crop&q=60" alt="Analytics Dashboard App" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=400&auto=format&fit=crop';">
+              </div>
+              <div class="business-case-body">
+                <span class="business-case-tag" data-technologies="Node.js, Chart.js, WebSockets"></span>
+                <h4>Analytics Dashboard App</h4>
+                <p>Real-time performance metrics monitor aggregating visual charts and tables for system health telemetry.</p>
+                <a href="https://example.com" target="_blank" class="business-case-link">Access Project Brief <i class="fa-solid fa-file-invoice"></i></a>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+        <!-- D. Student Academic Projects -->
+        <div class="student-only student-projects-layout">
+          <div class="student-projects-grid">
+            
+            <div class="student-project-card">
+              <div class="student-project-img">
+                <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=500&auto=format&fit=crop&q=60" alt="Interactive Design System" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=400&auto=format&fit=crop';">
+              </div>
+              <div class="student-project-body">
+                <span class="student-project-tags" data-technologies="React, Tailwind, Storybook"></span>
+                <h4>Interactive Design System</h4>
+                <p>A comprehensive, modular CSS design token library built for lightning-fast premium website layout creations.</p>
+                <div class="student-project-links">
+                  <a href="https://example.com" target="_blank" class="student-demo-btn">Live Presentation</a>
+                  <a href="https://github.com" target="_blank" class="student-code-btn">GitHub Source</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="student-project-card">
+              <div class="student-project-img">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&auto=format&fit=crop&q=60" alt="Analytics Dashboard App" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=400&auto=format&fit=crop';">
+              </div>
+              <div class="student-project-body">
+                <span class="student-project-tags" data-technologies="Node.js, Chart.js, WebSockets"></span>
+                <h4>Analytics Dashboard App</h4>
+                <p>Real-time performance metrics monitor aggregating visual charts and tables for system health telemetry.</p>
+                <div class="student-project-links">
+                  <a href="https://example.com" target="_blank" class="student-demo-btn">Live Presentation</a>
+                  <a href="https://github.com" target="_blank" class="student-code-btn">GitHub Source</a>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         6. CERTIFICATES SECTIONS
+         ========================================== -->
+    <section id="credentials" class="hud-viewport-section">
+      <!-- Section Headers -->
+      <div class="hud-section-header dev-only"><div class="header-line"></div><h2 class="hud-section-title"><span class="accent-number">05.</span> CREDENTIAL NODES</h2><span class="hud-sub-label">CERTIFICATE_DECRYPTED</span></div>
+      <div class="hud-section-header design-only"><div class="header-line"></div><h2 class="hud-section-title">Certifications</h2><span class="hud-sub-label">VERIFIED_CREDENTIALS</span></div>
+      <div class="hud-section-header student-only"><div class="header-line"></div><h2 class="hud-section-title">Certifications &amp; Awards</h2><span class="hud-sub-label">ACADEMIC_HONORS</span></div>
+      <div class="hud-section-header business-only"><div class="header-line"></div><h2 class="hud-section-title">Verified Corporate Credentials</h2><span class="hud-sub-label">EXECUTIVE_COMPLIANCE</span></div>
+
+      <!-- Categories Certificates Grid Router -->
+      <div class="credentials-theme-router">
+        
+        <!-- A. Developer Cyber Nodes -->
+        <div class="dev-only credentials-flow-wrapper" id="credentials-wrapper">
+          
+          <div class="credential-hud-node">
+            <div class="credential-node-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <div class="credential-node-content">
+              <h4 class="credential-name">Advanced UI/UX Certification</h4>
+              <span class="credential-issuer">// AUTHORIZED: Design Institute of Tech // Aug 2022</span>
+            </div>
+            <div class="credential-actions">
+              <a href="https://example.com" target="_blank" class="cred-verify-trigger"><span>VERIFY_KEY</span><i class="fa-solid fa-key"></i></a>
+            </div>
+          </div>
+          
+        </div>
+
+        <!-- B. Designer Minimal List -->
+        <div class="design-only designer-credentials-layout">
+          <div class="designer-credentials-list" id="credentials-designer-list">
+            
+            <div class="designer-cred-row">
+              <div class="designer-cred-info">
+                <h5>Advanced UI/UX Certification</h5>
+                <span>Design Institute of Tech &bull; Aug 2022</span>
+              </div>
+              <a href="https://example.com" target="_blank" class="designer-cred-link">Verify <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+            
+          </div>
+        </div>
+
+        <!-- D. Student Academic List -->
+        <div class="student-only student-credentials-layout">
+          <div class="student-credentials-grid" id="credentials-student-list">
+            
+            <div class="student-cred-card">
+              <div class="student-cred-icon"><i class="fa-solid fa-award"></i></div>
+              <h5>Advanced UI/UX Certification</h5>
+              <span class="student-cred-org">Design Institute of Tech</span>
+              <span class="student-cred-date">Aug 2022</span>
+              <a href="https://example.com" target="_blank" class="student-cred-btn">Verify Credential</a>
+            </div>
+            
+          </div>
+        </div>
+
+        <!-- E. Business Corporate Credentials -->
+        <div class="business-only business-credentials-layout">
+          <div class="business-credentials-table" id="credentials-business-list">
+            
+            <div class="business-cred-row">
+              <div class="biz-cred-col bold">Advanced UI/UX Certification</div>
+              <div class="biz-cred-col">Design Institute of Tech</div>
+              <div class="biz-cred-col muted">Aug 2022</div>
+              <div class="biz-cred-col text-right"><a href="https://example.com" target="_blank" class="biz-cred-btn">Verify Badge</a></div>
+            </div>
+            
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         7. SECURE SIGNAL TRANSMISSION (CONTACT)
+         ========================================== -->
+    <section id="secure-terminal" class="hud-viewport-section">
+      <!-- Section Headers -->
+      <div class="hud-section-header dev-only"><div class="header-line"></div><h2 class="hud-section-title"><span class="accent-number">06.</span> TRANSMIT SIGNAL</h2><span class="hud-sub-label">CONTACT_SECURE_GATEWAY</span></div>
+      <div class="hud-section-header design-only"><div class="header-line"></div><h2 class="hud-section-title">Inquiry Terminal</h2><span class="hud-sub-label">ESTABLISH_CORRESPONDENCE</span></div>
+      <div class="hud-section-header freelance-only"><div class="header-line"></div><h2 class="hud-section-title">Let's Discuss Your Project</h2><span class="hud-sub-label">PROPOSAL_GATEWAY</span></div>
+      <div class="hud-section-header student-only"><div class="header-line"></div><h2 class="hud-section-title">Get In Touch</h2><span class="hud-sub-label">STUDENT_CONNECT_FORM</span></div>
+      <div class="hud-section-header business-only"><div class="header-line"></div><h2 class="hud-section-title">Corporate Communications</h2><span class="hud-sub-label">ENTERPRISE_REQUEST_PROPOSAL</span></div>
+
+      <!-- Category Specific Contact Forms -->
+      <div class="contact-forms-theme-router">
+        
+        <!-- A. Developer CLI Terminal Signal form -->
+        <div class="dev-only secure-transmission-grid col-2">
+          <div class="terminal-instructions-card">
+            <h3 class="instructions-title"><i class="fa-solid fa-triangle-exclamation text-pink"></i> SIGNAL INFRASTRUCTURE</h3>
+            <p class="instructions-para">Enter the details into the transmission log on the right to transmit an encrypted data payload. Signals are parsed, queued, and dispatched immediately to node endpoints.</p>
+            <div class="cyber-security-badge">
+              <div class="lock-shield"><i class="fa-solid fa-lock"></i></div>
+              <div class="badge-text"><strong>PAYLOAD ENCRYPTED</strong><span>SECURE SSL // TLS GATEWAY</span></div>
+            </div>
+            <div class="diagnostics-terminal-feed">
+              <div class="feed-header"><span>gateway_live_feed.log</span></div>
+              <div class="feed-console" id="feed-console-logs"><p class="feed-line">[INFO] Waiting for user signal input...</p></div>
+            </div>
+          </div>
+          <div class="hud-glass-card transmission-panel">
+            <form id="cyber-transmission-form" class="secure-transmission-form" onsubmit="event.preventDefault();">
+              <div class="form-row">
+                <div class="input-hud-group">
+                  <label for="sig-name" class="input-hud-label">// TRANSMITTER_NAME</label>
+                  <div class="input-hud-wrapper">
+                    <input type="text" id="sig-name" class="input-hud-element" placeholder="Jane Doe" required>
+                    <div class="input-glow-line"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="input-hud-group">
+                  <label for="sig-email" class="input-hud-label">// FREQUENCY_EMAIL</label>
+                  <div class="input-hud-wrapper">
+                    <input type="email" id="sig-email" class="input-hud-element" placeholder="jane@example.com" required>
+                    <div class="input-glow-line"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="input-hud-group">
+                  <label for="sig-message" class="input-hud-label">// DATA_PAYLOAD</label>
+                  <div class="input-hud-wrapper">
+                    <textarea id="sig-message" class="input-hud-element text-area" placeholder="Write signal message..." required></textarea>
+                    <div class="input-glow-line"></div>
+                  </div>
+                </div>
+              </div>
+              <button type="submit" class="cyber-submit-trigger" id="submit-signal-btn">
+                <span class="btn-background-glow"></span>
+                <span class="btn-inner-content"><i class="fa-solid fa-tower-broadcast"></i><span>TRANSMIT PAYLOAD</span></span>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- B. Designer Underline Form -->
+        <div class="design-only designer-contact-layout">
+          <div class="designer-contact-split">
+            <div class="designer-contact-info">
+              <h3>Let's create something together.</h3>
+              <p>Feel free to reach out for collaborations, project inquiries, or just to say hello.</p>
+              <div class="designer-mail-link">
+                <span class="small-lbl">Drop a line:</span>
+                <a href="mailto:jane.doe@example.com">jane.doe@example.com</a>
+              </div>
+            </div>
+            <div class="designer-contact-form-wrapper">
+              <form class="designer-underline-form" onsubmit="event.preventDefault(); alert('Message transmitted successfully.'); this.reset();">
+                <div class="designer-form-group">
+                  <input type="text" class="designer-input" placeholder="Your Name" required>
+                </div>
+                <div class="designer-form-group">
+                  <input type="email" class="designer-input" placeholder="Your Email" required>
+                </div>
+                <div class="designer-form-group">
+                  <textarea class="designer-input designer-textarea" placeholder="Project Description" required></textarea>
+                </div>
+                <button type="submit" class="designer-submit-btn">Send Message</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- C. Freelancer Capsule Inquiry Form + Static Pricing Tables -->
+        <div class="freelance-only freelancer-contact-layout">
+          <!-- Pricing Section -->
+          <div class="pricing-headline">
+            <h3>Standard Commercial Engagement Packages</h3>
+            <p>Select a baseline engagement plan or send a custom scope using the secure portal below.</p>
+          </div>
+          <div class="pricing-cards-grid">
+            <div class="pricing-card">
+              <span class="plan-name">Consulting</span>
+              <div class="plan-price">Custom</div>
+              <p class="plan-desc">Best for code reviews, architecture blueprints, or database migration strategy audits.</p>
+              <a href="#secure-terminal" class="plan-cta-btn">Book Strategy</a>
+            </div>
+            <div class="pricing-card active">
+              <span class="plan-name">MVP Build</span>
+              <div class="plan-price">Flat-Rate</div>
+              <p class="plan-desc">A fully compiled, deployment-ready prototype of your SaaS platform shipped in 3 weeks.</p>
+              <a href="#secure-terminal" class="plan-cta-btn">Inquire Build</a>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="freelance-contact-card">
+            <h4>Initiate Project Contract Request</h4>
+            <form class="freelance-capsule-form" onsubmit="event.preventDefault(); alert('Project proposal transmitted successfully.'); this.reset();">
+              <div class="fl-form-row">
+                <input type="text" class="fl-capsule-input" placeholder="Organization / Full Name" required>
+              </div>
+              <div class="fl-form-row">
+                <input type="email" class="fl-capsule-input" placeholder="Connection Email" required>
+              </div>
+              <div class="fl-form-row">
+                <textarea class="fl-capsule-input fl-textarea" placeholder="What is the scope, budget, and timeline of your project?" required></textarea>
+              </div>
+              <button type="submit" class="fl-submit-btn">Transmit Scope Payload</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- D. Student Inquiry Card -->
+        <div class="student-only student-contact-layout">
+          <div class="student-contact-card">
+            <h3>Send a Message</h3>
+            <p>I would love to connect for job opportunities, internships, or academic projects.</p>
+            <form class="student-card-form" onsubmit="event.preventDefault(); alert('Message sent successfully.'); this.reset();">
+              <div class="student-form-row">
+                <input type="text" class="student-card-input" placeholder="Your Name" required>
+              </div>
+              <div class="student-form-row">
+                <input type="email" class="student-card-input" placeholder="Your Email Address" required>
+              </div>
+              <div class="student-form-row">
+                <textarea class="student-card-input student-textarea" placeholder="Your Message / Inquiry Details..." required></textarea>
+              </div>
+              <button type="submit" class="student-submit-btn">Send Message</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- E. Business Request Proposal Form -->
+        <div class="business-only business-contact-layout">
+          <div class="business-contact-card">
+            <h3>Request for Executive Consultation</h3>
+            <p>Please enter corporate credentials and project briefs below. Encrypted pipelines deliver transmissions directly to executive devices.</p>
+            <form class="business-corp-form" onsubmit="event.preventDefault(); alert('Consultation inquiry queued successfully.'); this.reset();">
+              <div class="biz-form-group">
+                <label>COMPANY / CONTACT NAME</label>
+                <input type="text" class="biz-input-element" placeholder="e.g. Acme Corporation" required>
+              </div>
+              <div class="biz-form-group">
+                <label>FREQUENCE EMAIL ADDRESS</label>
+                <input type="email" class="biz-input-element" placeholder="e.g. exec@acme.com" required>
+              </div>
+              <div class="biz-form-group">
+                <label>CONSULTATION SCOPE</label>
+                <textarea class="biz-input-element biz-textarea" placeholder="Detail corporate challenges, timeline, and goals..." required></textarea>
+              </div>
+              <button type="submit" class="biz-submit-btn">Queue Consultation</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FOOTER / CONTEXT SIGN OFF -->
+    <footer class="hud-viewport-footer">
+      <div class="footer-hud-lines"></div>
+      <div class="footer-flex-container">
+        <div class="footer-brand">// Jane Doe // PORTFOLIO PORTAL SYSTEM</div>
+        <div class="footer-copyright">
+          &copy; <span id="hud-current-year">2026</span> ALL DATA CLASSIFIED.
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Custom Logic Script -->
+  <script>
+/* ==========================================================================
+   AETHER TECH PREMIUM — CATEGORY-AWARE TEMPLATE REGISTRY JAVASCRIPT
+   ========================================================================== */
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  // Global Footer Year
+  const yearEl = document.getElementById('hud-current-year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  // Retrieve active portfolio type category
+  const portfolioType = document.body.getAttribute('data-type') || 'Developer';
+
+  /* ==========================================================================
+     GLOBAL HELPER FUNCTIONS
+     ========================================================================== */
+  
+  // 1. Dynamic Technologies Parser
+  const parseTechnologies = () => {
+    // Select all tech containers across themes
+    const containers = document.querySelectorAll(
+      '.pod-tags, .designer-gallery-tags, .fl-project-tags, .student-project-tags, .business-case-tag'
+    );
+    
+    containers.forEach(container => {
+      const rawTech = container.getAttribute('data-technologies');
+      if (rawTech && rawTech.trim().length > 0) {
+        const list = rawTech.split(',').map(t => t.trim()).filter(t => t.length > 0);
+        container.innerHTML = ''; // clear placeholder
+        
+        list.forEach(tech => {
+          const span = document.createElement('span');
+          span.className = 'pod-tech-badge';
+          // designer and business tags have minimal prefix formatting
+          if (container.classList.contains('designer-gallery-tags')) {
+            span.textContent = `#${tech} `;
+            span.style.color = '#d4af37';
+          } else {
+            span.textContent = tech;
+          }
+          container.appendChild(span);
+        });
+      } else {
+        // Safe fallback
+        container.innerHTML = '';
+      }
+    });
+  };
+
+  // 2. Empty Sections Stripper
+  const pruneEmptySections = () => {
+    // Check if certificates are empty for the active category
+    const activeCertContainer = document.querySelector(`.${portfolioType.toLowerCase()}-only [id*="credentials-"]`);
+    const devCertContainer = document.getElementById('credentials-wrapper');
+    const certTarget = activeCertContainer || devCertContainer;
+    
+    if (certTarget) {
+      const childCount = certTarget.children.length;
+      if (childCount === 0) {
+        const certSection = document.getElementById('credentials');
+        if (certSection) {
+          certSection.style.display = 'none';
+          // also hide nav deck link if present
+          const certNav = document.querySelector(`.deck-item[href="#credentials"]`);
+          if (certNav) certNav.style.display = 'none';
+        }
+      }
+    }
+
+    // Check if timelines are empty
+    const expId = `experience-${portfolioType.toLowerCase()}-list`;
+    const eduId = `education-${portfolioType.toLowerCase()}-list`;
+    
+    const expContainer = document.getElementById(expId) || document.getElementById('experience-rack-list');
+    const eduContainer = document.getElementById(eduId) || document.getElementById('education-rack-list');
+    
+    const hasExp = expContainer && expContainer.children.length > 0;
+    const hasEdu = eduContainer && eduContainer.children.length > 0;
+
+    if (!hasExp && !hasEdu) {
+      const timelineSection = document.getElementById('timeline-flow');
+      if (timelineSection) {
+        timelineSection.style.display = 'none';
+        const timelineNav = document.querySelector(`.deck-item[href="#timeline-flow"]`);
+        if (timelineNav) timelineNav.style.display = 'none';
+      }
+    } else {
+      // If one is empty, hide its column wrapper
+      if (!hasExp && expContainer) expContainer.closest('.timeline-hud-column, .designer-time-col, .freelance-time-col, .student-academic-timeline-col, .business-exec-col').style.display = 'none';
+      if (!hasEdu && eduContainer) eduContainer.closest('.timeline-hud-column, .designer-time-col, .freelance-time-col, .student-academic-timeline-col, .business-exec-col').style.display = 'none';
+    }
+  };
+
+  // 3. Navigation Intersection Scroll Highlight Handler
+  const initNavScrollTracker = () => {
+    const sectionsList = document.querySelectorAll('section');
+    
+    // Select relevant navigation items based on active category theme
+    let navQuery = '';
+    if (portfolioType === 'Developer') navQuery = '.deck-item';
+    else if (portfolioType === 'Designer') navQuery = '.designer-nav-item';
+    else if (portfolioType === 'Freelancer') navQuery = '.capsule-link';
+    else if (portfolioType === 'Student') navQuery = '.student-link, .student-link-btn';
+    else if (portfolioType === 'Business') navQuery = '.business-menu-item, .business-cta-button';
+
+    const activeNavLinks = document.querySelectorAll(navQuery);
+    if (activeNavLinks.length === 0) return;
+
+    const onScroll = () => {
+      let scrollPos = window.scrollY + window.innerHeight / 2.8;
+
+      sectionsList.forEach(sec => {
+        const top = sec.offsetTop;
+        const height = sec.offsetHeight;
+        const id = sec.getAttribute('id');
+        
+        if (scrollPos >= top && scrollPos < top + height) {
+          activeNavLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${id}`) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll(); // Initial run
+
+    // Smooth Anchor Scroll handler
+    activeNavLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        const targetId = link.getAttribute('href');
+        if (targetId && targetId.startsWith('#')) {
+          e.preventDefault();
+          const targetSec = document.querySelector(targetId);
+          if (targetSec) {
+            targetSec.scrollIntoView({
+              behavior: 'smooth',
+              block: 'center'
+            });
+          }
+        }
+      });
+    });
+  };
+
+  /* ==========================================================================
+     CATEGORY RENDERER CLASS DEFINITIONS (TEMPLATE REGISTRY PATTERN)
+     ========================================================================== */
+
+  // A. Developer Theme Renderer
+  class DeveloperRenderer {
+    render() {
+      // 1. Loader timer
+      const loader = document.getElementById('cyber-boot-loader');
+      if (loader) {
+        setTimeout(() => {
+          loader.classList.add('hidden');
+        }, 1600);
+      }
+
+      // 2. Latency Monitor simulator
+      const latencyVal = document.getElementById('latency-val');
+      if (latencyVal) {
+        setInterval(() => {
+          const ping = Math.floor(Math.random() * 21) + 8; // 8ms - 28ms
+          latencyVal.textContent = `${ping}ms`;
+        }, 4000);
+      }
+
+      // 3. Transmission CLI console logger
+      const transmissionForm = document.getElementById('cyber-transmission-form');
+      const feedConsole = document.getElementById('feed-console-logs');
+
+      if (transmissionForm && feedConsole) {
+        const appendFeedLine = (text, type = 'normal') => {
+          const line = document.createElement('p');
+          line.className = 'feed-line';
+          if (type === 'error') line.style.color = '#ef4444';
+          if (type === 'success') line.style.color = '#00ff66';
+          if (type === 'warning') line.style.color = '#eab308';
+          
+          const timestamp = new Date().toLocaleTimeString();
+          line.textContent = `[${timestamp}] ${text}`;
+          feedConsole.appendChild(line);
+          feedConsole.scrollTop = feedConsole.scrollHeight;
+        };
+
+        transmissionForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const name = document.getElementById('sig-name').value;
+          const email = document.getElementById('sig-email').value;
+          const msg = document.getElementById('sig-message').value;
+
+          appendFeedLine(`[PAYLOAD_INIT] Connecting secure transmission nodes for ${name}...`, 'warning');
+          
+          setTimeout(() => {
+            appendFeedLine(`[ENCRYPTING] Executing handshake SSL with frequency ${email}...`);
+          }, 850);
+
+          setTimeout(() => {
+            appendFeedLine(`[DISPATCHING] Dispatched data package of size ${msg.length} bytes.`);
+          }, 1700);
+
+          setTimeout(() => {
+            appendFeedLine(`[SUCCESS] Signal dispatched successfully! Transaction ID: ${Math.random().toString(36).substring(7).toUpperCase()}`, 'success');
+            transmissionForm.reset();
+            alert('Decryption payload accepted. Signal transmitted.');
+          }, 2600);
+        });
+      }
+    }
+  }
+
+  // B. Designer Theme Renderer
+  class DesignerRenderer {
+    render() {
+      // Designers have direct subtle page transitions
+      document.body.style.opacity = '0';
+      document.body.style.transition = 'opacity 1s ease';
+      window.addEventListener('load', () => {
+        document.body.style.opacity = '1';
+      });
+      // Fallback
+      setTimeout(() => {
+        document.body.style.opacity = '1';
+      }, 500);
+    }
+  }
+
+  // C. Freelancer Theme Renderer
+  class FreelancerRenderer {
+    render() {
+      // Pricing cards redirection CTA trigger
+      const pricingBtns = document.querySelectorAll('.pricing-card .plan-cta-btn');
+      const flMsgInput = document.querySelector('.freelance-capsule-form textarea');
+      
+      pricingBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const planName = btn.closest('.pricing-card').querySelector('.plan-name').textContent;
+          
+          // Auto fill scope description in contact form
+          if (flMsgInput) {
+            flMsgInput.value = `Hello! I would like to schedule an inquiry regarding the [${planName}] plan. Let's discuss scope, timeline, and deliverables.`;
+            flMsgInput.focus();
+          }
+          
+          const target = document.getElementById('secure-terminal');
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        });
+      });
+    }
+  }
+
+  // D. Student Theme Renderer (CS/IT Detection logic)
+  class StudentRenderer {
+    render() {
+      // 1. Scan title and academic description for IT tags
+      const degreeTitle = document.querySelector('.student-degree-status');
+      const eduCards = document.querySelectorAll('#education-student-list .student-academic-card');
+      
+      let bioTextSearch = degreeTitle ? degreeTitle.textContent : '';
+      
+      eduCards.forEach(card => {
+        bioTextSearch += ' ' + card.innerText;
+      });
+
+      // IT keywords filter
+      const itKeywords = /computer|science|software|engineering|developer|technology|it|ai|data\s+science|programming|coding/i;
+      const isITStudent = itKeywords.test(bioTextSearch);
+      
+      const itMetricsBlock = document.getElementById('student-it-metrics-container');
+      if (itMetricsBlock) {
+        if (isITStudent) {
+          // Keep block and animate it
+          itMetricsBlock.style.display = 'block';
+        } else {
+          // Non-IT student: Strip developer metrics completely
+          itMetricsBlock.remove();
+        }
+      }
+    }
+  }
+
+  // E. Business Theme Renderer (Corporate stats count updates)
+  class BusinessRenderer {
+    render() {
+      // Count existing experiences & case studies in DOM
+      const execExperienceList = document.getElementById('experience-business-list');
+      const execProjectsList = document.querySelector('.business-case-studies-grid');
+
+      const expCount = execExperienceList ? execExperienceList.children.length : 0;
+      const projCount = execProjectsList ? execProjectsList.children.length : 0;
+
+      const expCountEl = document.getElementById('stat-experience-count');
+      const projCountEl = document.getElementById('stat-projects-count');
+
+      // Animating stats counters
+      const animateCount = (el, maxVal) => {
+        if (!el || maxVal === 0) return;
+        let count = 0;
+        const step = Math.ceil(maxVal / 20) || 1;
+        const interval = setInterval(() => {
+          count += step;
+          if (count >= maxVal) {
+            el.textContent = `${maxVal}+`;
+            clearInterval(interval);
+          } else {
+            el.textContent = `${count}+`;
+          }
+        }, 50);
+      };
+
+      animateCount(expCountEl, expCount);
+      animateCount(projCountEl, projCount);
+    }
+  }
+
+  /* ==========================================================================
+     INITIALIZE ROUTING (TEMPLATE REGISTRY ORCHESTRATION)
+     ========================================================================== */
+  
+  // 1. Process technologies array templates
+  parseTechnologies();
+  
+  // 2. Prune empty optional sections from UI
+  pruneEmptySections();
+  
+  // 3. Bind navigation scroll trackers
+  initNavScrollTracker();
+
+  // 4. Instantiate and execute category specific rendering pipeline
+  const TemplateRegistry = {
+    Developer: new DeveloperRenderer(),
+    Designer: new DesignerRenderer(),
+    Freelancer: new FreelancerRenderer(),
+    Student: new StudentRenderer(),
+    Business: new BusinessRenderer()
+  };
+
+  const activeRenderer = TemplateRegistry[portfolioType];
+  if (activeRenderer) {
+    activeRenderer.render();
+  }
+
+});
+
+</script>
+</body>
+</html>
