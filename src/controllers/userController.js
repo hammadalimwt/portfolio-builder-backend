@@ -56,7 +56,7 @@ const uploadAvatar = asyncHandler(async (req, res) => {
 
   // Upload new avatar buffer to Cloudinary
   const result = await uploadToCloudinary(req.file.buffer, {
-    folder: 'portfolio-builder/avatars',
+    folder: 'portfolio-maker/avatars',
     transformation: [
       { width: 400, height: 400, crop: 'fill', gravity: 'face' }, // Smart face-crop
       { quality: 'auto', fetch_format: 'auto' }                    // Auto format + compression

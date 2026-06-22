@@ -30,7 +30,7 @@ const uploadProfileImage = asyncHandler(async (req, res) => {
 
   // Upload to Cloudinary
   const result = await uploadToCloudinary(req.file.buffer, {
-    folder: 'portfolio-builder/profile-images',
+    folder: 'portfolio-maker/profile-images',
     transformation: [
       { width: 600, height: 600, crop: 'fill', gravity: 'face' },
       { quality: 'auto', fetch_format: 'auto' }
@@ -83,7 +83,7 @@ const uploadProjectImage = asyncHandler(async (req, res) => {
 
   // Upload new image
   const result = await uploadToCloudinary(req.file.buffer, {
-    folder: 'portfolio-builder/project-images',
+    folder: 'portfolio-maker/project-images',
     transformation: [
       { width: 1200, height: 800, crop: 'fill' },
       { quality: 'auto', fetch_format: 'auto' }
@@ -131,7 +131,7 @@ const uploadTemplateThumbnail = asyncHandler(async (req, res) => {
   }
 
   const result = await uploadToCloudinary(req.file.buffer, {
-    folder: 'portfolio-builder/template-thumbnails',
+    folder: 'portfolio-maker/template-thumbnails',
     transformation: [
       { width: 800, height: 600, crop: 'fill' },
       { quality: 'auto', fetch_format: 'auto' }

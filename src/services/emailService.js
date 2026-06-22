@@ -34,7 +34,7 @@ class EmailService {
   }
 
   async sendMail({ to, subject, html, text }) {
-    const from = process.env.SMTP_FROM || 'noreply@portfoliobuilder.com';
+    const from = process.env.SMTP_FROM || 'noreply@portfoliomaker.com';
 
     if (!this.transporter) {
       logger.info(`[Mock Email Fallback]
@@ -67,13 +67,13 @@ HTML:    [HTML Content Hidden]
   }
 
   async sendPasswordResetEmail(email, token) {
-    const subject = 'PortfolioBuilder — Reset Your Password';
+    const subject = 'PortfolioMaker — Reset Your Password';
     const text = `You requested a password reset. Your 6-digit verification code is: ${token}. This code is valid for 10 minutes.`;
     const html = `
       <div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 30px; background-color: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
         <!-- Logo Header -->
         <div style="text-align: center; margin-bottom: 30px;">
-          <h2 style="color: #4f6ef7; font-weight: 800; font-size: 26px; margin: 0; letter-spacing: -0.5px;">PortfolioBuilder</h2>
+          <h2 style="color: #4f6ef7; font-weight: 800; font-size: 26px; margin: 0; letter-spacing: -0.5px;">PortfolioMaker</h2>
         </div>
         
         <hr style="border: 0; border-top: 1px solid #e5e7eb; margin: 20px 0;" />
@@ -81,7 +81,7 @@ HTML:    [HTML Content Hidden]
         <!-- Content -->
         <div style="color: #1f2937; font-size: 16px; line-height: 1.6; margin-bottom: 24px;">
           <p>Hello,</p>
-          <p>We received a request to reset the password for your **PortfolioBuilder** account. Use the verification code below to set a new password:</p>
+          <p>We received a request to reset the password for your **PortfolioMaker** account. Use the verification code below to set a new password:</p>
           
           <!-- Code Card -->
           <div style="text-align: center; margin: 30px 0; padding: 20px; background: linear-gradient(135deg, rgba(79, 110, 247, 0.05) 0%, rgba(155, 92, 246, 0.05) 100%); border: 1px solid rgba(79, 110, 247, 0.15); border-radius: 8px;">
@@ -95,8 +95,8 @@ HTML:    [HTML Content Hidden]
         
         <!-- Footer -->
         <div style="text-align: center; color: #9ca3af; font-size: 12px; line-height: 1.4;">
-          <p>This is an automated security notification from PortfolioBuilder.</p>
-          <p style="margin-top: 5px;">&copy; ${new Date().getFullYear()} PortfolioBuilder SaaS MVP. All rights reserved.</p>
+          <p>This is an automated security notification from PortfolioMaker.</p>
+          <p style="margin-top: 5px;">&copy; ${new Date().getFullYear()} PortfolioMaker SaaS MVP. All rights reserved.</p>
         </div>
       </div>
     `;
@@ -105,14 +105,14 @@ HTML:    [HTML Content Hidden]
   }
 
   async sendEmailVerification(email, token) {
-    const subject = 'PortfolioBuilder — Verify Your Email';
+    const subject = 'PortfolioMaker — Verify Your Email';
     const verificationUrl = `${process.env.BASE_URL || 'http://localhost:5000'}/api/auth/verify-email?token=${token}`;
-    const text = `Thank you for registering at PortfolioBuilder! Please verify your email by opening this link: ${verificationUrl}`;
+    const text = `Thank you for registering at PortfolioMaker! Please verify your email by opening this link: ${verificationUrl}`;
     const html = `
       <div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 30px; background-color: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
         <!-- Logo Header -->
         <div style="text-align: center; margin-bottom: 30px;">
-          <h2 style="color: #4f6ef7; font-weight: 800; font-size: 26px; margin: 0; letter-spacing: -0.5px;">PortfolioBuilder</h2>
+          <h2 style="color: #4f6ef7; font-weight: 800; font-size: 26px; margin: 0; letter-spacing: -0.5px;">PortfolioMaker</h2>
         </div>
         
         <hr style="border: 0; border-top: 1px solid #e5e7eb; margin: 20px 0;" />
@@ -120,7 +120,7 @@ HTML:    [HTML Content Hidden]
         <!-- Content -->
         <div style="color: #1f2937; font-size: 16px; line-height: 1.6; margin-bottom: 24px;">
           <p>Hello,</p>
-          <p>Thank you for signing up with **PortfolioBuilder**! To complete your registration and activate your account, please verify your email address by clicking the button below:</p>
+          <p>Thank you for signing up with **PortfolioMaker**! To complete your registration and activate your account, please verify your email address by clicking the button below:</p>
           
           <!-- Button Card -->
           <div style="text-align: center; margin: 30px 0;">
@@ -134,8 +134,8 @@ HTML:    [HTML Content Hidden]
         
         <!-- Footer -->
         <div style="text-align: center; color: #9ca3af; font-size: 12px; line-height: 1.4;">
-          <p>This is an automated notification from PortfolioBuilder.</p>
-          <p style="margin-top: 5px;">&copy; ${new Date().getFullYear()} PortfolioBuilder SaaS MVP. All rights reserved.</p>
+          <p>This is an automated notification from PortfolioMaker.</p>
+          <p style="margin-top: 5px;">&copy; ${new Date().getFullYear()} PortfolioMaker SaaS MVP. All rights reserved.</p>
         </div>
       </div>
     `;

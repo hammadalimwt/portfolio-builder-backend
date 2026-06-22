@@ -1,7 +1,7 @@
 {
-  "name": "portfolio-builder-backend",
+  "name": "portfolio-maker-backend",
   "version": "1.0.0",
-  "description": "Portfolio Builder SaaS MVP Backend (MERN)",
+  "description": "Portfolio Maker SaaS MVP Backend (MERN)",
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",

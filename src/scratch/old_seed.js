@@ -47,11 +47,11 @@ const seedData = async () => {
 
     // 2. Safe Seeding Admin User
     logger.info('Upserting Admin user...');
-    let admin = await User.findOne({ email: 'admin@portfoliobuilder.com' });
+    let admin = await User.findOne({ email: 'admin@portfoliomaker.com' });
     if (!admin) {
       admin = await User.create({
         name: 'System Admin',
-        email: 'admin@portfoliobuilder.com',
+        email: 'admin@portfoliomaker.com',
         password: 'adminpassword', // Will be hashed by User schema pre-save
         role: 'ADMIN',
         status: 'ACTIVE',

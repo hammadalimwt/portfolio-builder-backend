@@ -38,7 +38,7 @@ const uploadToCloudinary = (buffer, options = {}) => {
   return new Promise((resolve, reject) => {
     const defaultOptions = {
       resource_type: 'image',
-      folder: 'portfolio-builder',
+      folder: 'portfolio-maker',
       ...options
     };
 

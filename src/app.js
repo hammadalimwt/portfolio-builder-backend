@@ -83,7 +83,7 @@ app.get("/health", (req, res) => {
 app.get("/", (req, res) => {
   res.status(200).json({
     success: true,
-    message: "Welcome to the Portfolio Builder API Server!",
+    message: "Welcome to the Portfolio Maker API Server!",
     version: "1.0.0",
     status: "ACTIVE",
     frontend_url: process.env.BASE_URL,

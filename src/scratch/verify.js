@@ -13,11 +13,11 @@ const logger = require('../services/loggerService');
 
 const runSanityTests = async () => {
   logger.info('==================================================');
-  logger.info('   PORTFOLIO BUILDER BACKEND SANITY VERIFICATION  ');
+  logger.info('   PORTFOLIO MAKER BACKEND SANITY VERIFICATION  ');
   logger.info('==================================================');
 
   try {
-    const dbUri = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/portfolio-builder';
+    const dbUri = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/portfolio-maker';
     await mongoose.connect(dbUri);
     logger.info('1. Connected to MongoDB database successfully.');
 
